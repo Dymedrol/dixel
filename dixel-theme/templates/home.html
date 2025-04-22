@@ -9,10 +9,15 @@
 {% block body %}
 
   {% dnd_area "dnd_area"
-  label="Main section"
+    label="Main section"
   %}
     {% dnd_section %}
       {% dnd_module "module_174531470738615" path="/dixel-theme/modules/dixel-jumbo-banner", label="dixel-jumbo-banner", offset=0 , offset=0 , width=12 %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_module "module_17453222354606" path="/dixel-theme/modules/dixel-our-services", label="dixel-our-services", offset=0 , offset=0 , width=12 %}
       {% end_dnd_module %}
     {% end_dnd_section %}
 

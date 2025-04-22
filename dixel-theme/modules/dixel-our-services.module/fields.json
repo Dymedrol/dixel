@@ -1,0 +1,115 @@
+[ {
+  "id" : "0e1fa11b-251e-fdf9-0958-f03bd8957ce7",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Our Services in DMV area <strong>􁘮</strong>"
+}, {
+  "id" : "ee2cd3b8-5357-03ce-1429-834a9c36cf4d",
+  "name" : "card",
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : "9f93d9b3-f3d0-7524-ddd8-65445e0546ad",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "9f93d9b3-f3d0-7524-ddd8-65445e0546ad",
+    "name" : "card_title",
+    "label" : "Card title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "96c254c7-82cb-0e20-acfa-1b4ff4ab8838",
+    "name" : "card_text",
+    "label" : "Card text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Card text"
+  }, {
+    "id" : "dd5859cf-bc12-ccac-529f-7729cba8b7f8",
+    "name" : "card_link",
+    "label" : "card link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "4c176c53-2937-71f9-c2fa-9da42b9879c8",
+    "name" : "card_image",
+    "label" : "card image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "card_title" : "title",
+    "card_text" : "Card text",
+    "card_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "card_image" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  } ]
+} ]

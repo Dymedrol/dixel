@@ -15,6 +15,10 @@
     "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/x.svg",
     "autoload" : false,
     "name" : "x.svg"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/dixel-logo.svg",
+    "autoload" : false,
+    "name" : "dixel-logo.svg"
   } ],
   "label" : "Dixel footer",
   "is_available_for_new_content" : true
