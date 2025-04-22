@@ -3,245 +3,63 @@
   label: Website header
 -->
 
-{% macro add_lang_switcher() %}
-  {% if get_asset_version('@hubspot/language_switcher') == 1 %}
-    {% module "language-switcher"
-      path="@hubspot/language_switcher",
-      label="Language switcher",
-      display_mode="localized"
-      styles={
-        "group_button" : {
-          "group_alignment" : {
-            "alignment" : {
-              "horizontal_align" : "RIGHT"
-            }
-          },
-          "group_background" : {
-            "color" : {
-              "color" : "#000000",
-              "opacity" : 0
-            }
-          },
-          "group_border" : {
-            "border" : {
-              "bottom" : {
-                "style" : "none"
-              },
-              "left" : {
-                "style" : "none"
-              },
-              "right" : {
-                "style" : "none"
-              },
-              "top" : {
-                "style" : "none"
-              }
-            }
-          },
-          "group_chevron" : {
-            "color" : {
-              "color" : "#516d8d",
-              "opacity" : 100
-            },
-            "size" : 10,
-            "spacing" : 10
-          },
-          "group_corner" : {
-            "radius" : 0
-          },
-          "group_icon" : {
-            "color" : {
-              "color" : "#516d8d",
-              "opacity" : 100
-            },
-            "size" : 15,
-            "spacing" : 10
-          },
-          "group_spacing" : {
-            "spacing" : {
-              "padding" : {
-                "bottom" : {
-                  "units" : "px",
-                  "value" : 7
-                },
-                "left" : {
-                  "units" : "px",
-                  "value" : 15
-                },
-                "right" : {
-                  "units" : "px",
-                  "value" : 15
-                },
-                "top" : {
-                  "units" : "px",
-                  "value" : 7
-                }
-              }
-            }
-          },
-          "group_text" : {
-            "font" : {
-              "color" : "#516d8d",
-              "size" : 18,
-              "size_unit" : "px"
-            }
-          }
-        },
-        "group_dropdown" : {
-          "group_border" : {
-            "border" : {
-              "bottom" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "left" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "right" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              },
-              "top" : {
-                "color" : "#000000",
-                "opacity" : 100,
-                "style" : "none",
-                "width" : {
-                  "units" : "px",
-                  "value" : 1
-                }
-              }
-            }
-          },
-          "group_box_shadow" : {
-            "add_box_shadow" : true
-          },
-          "group_hover" : {
-            "group_background" : {
-              "color" : {
-                "color" : "#f8fafc",
-                "opacity" : 100
-              }
-            }
-          },
-          "group_text" : {
-            "font" : {
-              "color" : "#516d8d",
-              "size" : 16,
-              "size_unit" : "px"
-            }
-          }
-        }
-      },
-      add_chevron_down=true,
-      icon_options="icon"
-    %}
-  {% else %}
-    {% module "language-switcher"
-      path="@hubspot/language_switcher",
-      label="Language switcher",
-      display_mode="localized"
-    %}
-    <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
-  {% endif %}
-{% endmacro %}
-<header class="header">
 
-  {# The link below is used for a navigation skipper which allows users navigating the site with their keyboard to skip over the site navigation. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<header class="dixel-header dixel-header-absolute">
+  <div class="dixel-header-inner">
 
-  <a href="#main-content" class="header__skip">Skip to content</a>
+    <a href="/" class="dixel-header-logo-link">
+      <svg class="dixel-header-logo" width="1920" height="762" viewBox="0 0 1920 762" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1636.88 722.921C1636.88 744.422 1654.68 762 1676.41 762C1697.99 762 1715.62 744.422 1715.62 722.921V688.079C1715.62 666.578 1697.99 649 1676.41 649C1654.68 649 1636.88 666.578 1636.88 688.079V722.921ZM1693.73 705.5C1693.73 715.074 1686.02 722.764 1676.41 722.764C1666.65 722.764 1658.93 715.074 1658.93 705.5C1658.93 695.769 1666.65 688.079 1676.41 688.079C1686.02 688.079 1693.73 695.769 1693.73 705.5ZM1725.79 760.431V722.921L1756.34 699.85C1768.94 690.276 1762.96 677.25 1750.68 677.25H1725.79V650.57H1775.09C1806.9 650.57 1816.66 689.649 1790.05 708.796L1764.06 727.472H1805.01V760.431H1725.79ZM1864.88 760.431V741.126H1815.74V702.518L1861.26 650.57H1902.68V708.168H1920V741.126H1902.68V760.431H1864.88ZM1862.05 716.643C1869.92 716.643 1876.38 710.208 1876.38 702.361C1876.38 694.514 1869.92 688.079 1862.05 688.079C1854.17 688.079 1847.71 694.514 1847.71 702.361C1847.71 710.208 1854.17 716.643 1862.05 716.643ZM1546.93 760.431V722.921L1577.48 699.85C1590.08 690.276 1584.1 677.25 1571.81 677.25H1546.93V650.57H1596.22C1628.03 650.57 1637.8 689.649 1611.18 708.796L1585.2 727.472H1626.14V760.431H1546.93ZM1425.91 727.629C1425.91 746.619 1439.77 760.43 1458.98 760.43H1487.96V738.458H1476.78C1467.64 738.458 1462.13 732.965 1462.13 723.862V703.93H1487.96V681.958H1462.13V661.555H1425.91V727.629ZM1347.89 760.431V738.458H1370.72C1377.5 738.458 1379.23 729.983 1371.83 727.786L1364.27 725.589C1338.75 718.213 1344.42 681.958 1372.3 681.958H1415.29V703.931H1392.3C1385.53 703.931 1383.95 712.563 1391.51 714.603L1398.13 716.329C1425.06 723.392 1418.76 760.431 1390.41 760.431H1347.89ZM1245 721.038C1245 742.696 1262.64 760.431 1284.21 760.431H1337.13V738.458H1304.37C1295.24 738.458 1288.78 735.476 1286.1 727.943H1337.13L1337.29 720.567C1337.76 699.379 1319.96 681.958 1298.7 681.958H1284.21C1262.64 681.958 1245 699.536 1245 721.038ZM1300.75 699.85C1308.94 699.85 1315.24 706.128 1315.24 713.504H1286.26C1286.26 706.128 1292.56 699.85 1300.75 699.85Z" fill="#EC5532"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M628.794 222.014C567.749 222.014 518.595 172.854 518.595 111.007C518.595 49.1603 568.541 0 628.794 0C690.632 0 739.786 49.1603 739.786 111.007C739.786 172.854 690.632 222.014 628.794 222.014ZM538.415 559V265.624H720.758V559H538.415ZM1737.66 559V3.96454H1920V559H1737.66ZM1403.64 559C1295.02 559 1206.23 469.401 1206.23 359.98C1206.23 251.352 1295.02 162.546 1403.64 162.546H1476.57C1583.6 162.546 1673.19 250.559 1670.81 357.601L1670.02 394.868H1413.15C1426.63 432.928 1459.13 447.993 1505.11 447.993H1670.02V559H1403.64ZM1413.94 321.921H1559.82C1559.82 284.654 1528.1 252.938 1486.88 252.938C1445.65 252.938 1413.94 284.654 1413.94 321.921ZM864.521 360.773L768.592 559H944.593L982.648 482.881C996.918 454.336 1032.59 455.922 1046.07 482.881L1083.33 559H1203.84L1111.87 360.773L1203.84 162.546H1083.33L1046.07 238.665C1032.59 265.624 996.918 267.21 982.648 238.665L944.593 162.546H768.592L864.521 360.773ZM467.75 559V3.96454H285.407V162.546H197.407C88.7933 162.546 0 252.145 0 361.566C0 470.194 88.7933 559 197.407 559H467.75ZM118.92 361.566C118.92 312.406 157.767 273.553 206.127 273.553C255.281 273.553 294.128 312.406 294.128 361.566C294.128 409.933 255.281 448.786 206.127 448.786C157.767 448.786 118.92 409.933 118.92 361.566Z" fill="#EC5532"/>
+      </svg>
+    </a>
 
-  {# Top header drag and drop area #}
+    <menu class="dixel-header-menu">
+      {% set menu = menu("Dixel menu") %}
+      {% for link in menu.children %}
+        <a href="{{link.url if link.url else '#'}}" class="dixel-header-menu__link">{{ link.label }}</a>
+      {% endfor %}
+    </menu>
 
-  {% dnd_area "header-top"
-    label="Top header",
-    class="content-wrapper"
-  %}
-  {% end_dnd_area %}
-
-  {# Main header #}
-
-  <div class="header__container content-wrapper">
-
-    {# Header logo column #}
-
-    <div class="header__logo header__logo--main">
-      {% module "site_logo"
-        path="@hubspot/logo"
-        img={
-          "loading": "eager"
-        }
-      %}
+    <div class="dixel-header-burger" id="header-burger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M7 8H17M7 12H17M7 16H17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
     </div>
 
-    {# Header navigation column #}
-
-    <div class="header__column">
-
-      {# Header navigation row one #}
-
-
-
-      <div class="header__row-1">
-        {% if content.translated_content.values()|selectattr("published")|length or is_listing_view and group.translations %}
-          <div class="header__language-switcher header--element">
-            <div class="header__language-switcher--label">
-              {{ add_lang_switcher() }}
-            </div>
-          </div>
-        {% endif %}
-        <div class="header__search header--element">
-          {% module "site_search"
-            path="@hubspot/search_input",
-            label="Search",
-            field_label="Search",
-            placeholder=""
-          %}
+    <div class="dixel-header-mobile-menu" id="header-mobile-menu">
+      <div class="dixel-header-mobile-menu-top">
+        <a href="/">
+          <svg class="dixel-header-logo" width="1920" height="762" viewBox="0 0 1920 762" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1636.88 722.921C1636.88 744.422 1654.68 762 1676.41 762C1697.99 762 1715.62 744.422 1715.62 722.921V688.079C1715.62 666.578 1697.99 649 1676.41 649C1654.68 649 1636.88 666.578 1636.88 688.079V722.921ZM1693.73 705.5C1693.73 715.074 1686.02 722.764 1676.41 722.764C1666.65 722.764 1658.93 715.074 1658.93 705.5C1658.93 695.769 1666.65 688.079 1676.41 688.079C1686.02 688.079 1693.73 695.769 1693.73 705.5ZM1725.79 760.431V722.921L1756.34 699.85C1768.94 690.276 1762.96 677.25 1750.68 677.25H1725.79V650.57H1775.09C1806.9 650.57 1816.66 689.649 1790.05 708.796L1764.06 727.472H1805.01V760.431H1725.79ZM1864.88 760.431V741.126H1815.74V702.518L1861.26 650.57H1902.68V708.168H1920V741.126H1902.68V760.431H1864.88ZM1862.05 716.643C1869.92 716.643 1876.38 710.208 1876.38 702.361C1876.38 694.514 1869.92 688.079 1862.05 688.079C1854.17 688.079 1847.71 694.514 1847.71 702.361C1847.71 710.208 1854.17 716.643 1862.05 716.643ZM1546.93 760.431V722.921L1577.48 699.85C1590.08 690.276 1584.1 677.25 1571.81 677.25H1546.93V650.57H1596.22C1628.03 650.57 1637.8 689.649 1611.18 708.796L1585.2 727.472H1626.14V760.431H1546.93ZM1425.91 727.629C1425.91 746.619 1439.77 760.43 1458.98 760.43H1487.96V738.458H1476.78C1467.64 738.458 1462.13 732.965 1462.13 723.862V703.93H1487.96V681.958H1462.13V661.555H1425.91V727.629ZM1347.89 760.431V738.458H1370.72C1377.5 738.458 1379.23 729.983 1371.83 727.786L1364.27 725.589C1338.75 718.213 1344.42 681.958 1372.3 681.958H1415.29V703.931H1392.3C1385.53 703.931 1383.95 712.563 1391.51 714.603L1398.13 716.329C1425.06 723.392 1418.76 760.431 1390.41 760.431H1347.89ZM1245 721.038C1245 742.696 1262.64 760.431 1284.21 760.431H1337.13V738.458H1304.37C1295.24 738.458 1288.78 735.476 1286.1 727.943H1337.13L1337.29 720.567C1337.76 699.379 1319.96 681.958 1298.7 681.958H1284.21C1262.64 681.958 1245 699.536 1245 721.038ZM1300.75 699.85C1308.94 699.85 1315.24 706.128 1315.24 713.504H1286.26C1286.26 706.128 1292.56 699.85 1300.75 699.85Z" fill="#EC5532"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M628.794 222.014C567.749 222.014 518.595 172.854 518.595 111.007C518.595 49.1603 568.541 0 628.794 0C690.632 0 739.786 49.1603 739.786 111.007C739.786 172.854 690.632 222.014 628.794 222.014ZM538.415 559V265.624H720.758V559H538.415ZM1737.66 559V3.96454H1920V559H1737.66ZM1403.64 559C1295.02 559 1206.23 469.401 1206.23 359.98C1206.23 251.352 1295.02 162.546 1403.64 162.546H1476.57C1583.6 162.546 1673.19 250.559 1670.81 357.601L1670.02 394.868H1413.15C1426.63 432.928 1459.13 447.993 1505.11 447.993H1670.02V559H1403.64ZM1413.94 321.921H1559.82C1559.82 284.654 1528.1 252.938 1486.88 252.938C1445.65 252.938 1413.94 284.654 1413.94 321.921ZM864.521 360.773L768.592 559H944.593L982.648 482.881C996.918 454.336 1032.59 455.922 1046.07 482.881L1083.33 559H1203.84L1111.87 360.773L1203.84 162.546H1083.33L1046.07 238.665C1032.59 265.624 996.918 267.21 982.648 238.665L944.593 162.546H768.592L864.521 360.773ZM467.75 559V3.96454H285.407V162.546H197.407C88.7933 162.546 0 252.145 0 361.566C0 470.194 88.7933 559 197.407 559H467.75ZM118.92 361.566C118.92 312.406 157.767 273.553 206.127 273.553C255.281 273.553 294.128 312.406 294.128 361.566C294.128 409.933 255.281 448.786 206.127 448.786C157.767 448.786 118.92 409.933 118.92 361.566Z" fill="#EC5532"/>
+          </svg>
+        </a>
+        <div class="dixel-header-close" id="header-mobile-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M16.2431 7.75738L7.75781 16.2427M16.2431 16.2426L7.75781 7.75733" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
       </div>
-
-      {# Header navigation row two #}
-
-      <div class="header__row-2">
-        <div class="header--toggle header__navigation--toggle"></div>
-        {% if content.translated_content|length or is_listing_view and group.translations %}
-          <div class="header--toggle header__language-switcher--toggle"></div>
-        {% endif %}
-        <div class="header--toggle header__search--toggle"></div>
-        <div class="header__close--toggle"></div>
-        <div class="header__navigation header--element">
-          {% module "navigation-primary"
-            path="../../modules/menu",
-            label="Primary navigation"
-          %}
-        </div>
-      </div>
-
+      <menu class="dixel-header-mobile-menu-content">
+        {% for link in menu.children %}
+          <a href="{{link.url if link.url else '#'}}" class="dixel-header-mobile-menu-link">{{ link.label }}</a>
+        {% endfor %}
+      </menu>
+      <a href="tel:9999;" class="dixel-header-mobile-menu__button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M16.4267 12.7677L15.1997 11.5416C14.8747 11.2168 14.4341 11.0344 13.9747 11.0344C13.5153 11.0344 13.0747 11.2168 12.7497 11.5416L12.1367 12.1547C11.976 12.3159 11.7851 12.4437 11.5749 12.531C11.3647 12.6182 11.1393 12.6631 10.9117 12.6631C10.6842 12.6631 10.4588 12.6182 10.2486 12.531C10.0384 12.4437 9.84747 12.3159 9.68676 12.1547L7.84878 10.3145C7.52391 9.98915 7.34144 9.54816 7.34144 9.08837C7.34144 8.62858 7.52391 8.18758 7.84878 7.86224L8.46077 7.24918C8.78564 6.92384 8.96811 6.48284 8.96811 6.02305C8.96811 5.56326 8.78564 5.12227 8.46077 4.79693L7.23679 3.5708C7.08661 3.39204 6.89913 3.24831 6.68751 3.1497C6.47589 3.0511 6.24526 3 6.0118 3C5.77834 3 5.54771 3.0511 5.33609 3.1497C5.12447 3.24831 4.93699 3.39204 4.78681 3.5708C1.56385 6.77113 3.08483 10.4675 6.3058 13.6888C9.52676 16.9102 13.2197 18.4343 16.4257 15.224C16.6055 15.0738 16.7501 14.886 16.8493 14.6738C16.9486 14.4616 17 14.2301 17 13.9959C17 13.7616 16.9486 13.5302 16.8493 13.318C16.7501 13.1058 16.6065 12.9179 16.4267 12.7677Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        240 429 7447
+      </a>
     </div>
-
   </div>
-
-  {# Bottom header drag and drop area #}
-
-  {% dnd_area "header-bottom"
-    label="Bottom header",
-    class="content-wrapper"
-  %}
-  {% end_dnd_area %}
-
+  <a href="tel:99999" class="dixel-header-cta">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M16.4267 12.7677L15.1997 11.5416C14.8747 11.2168 14.4341 11.0344 13.9747 11.0344C13.5153 11.0344 13.0747 11.2168 12.7497 11.5416L12.1367 12.1547C11.976 12.3159 11.7851 12.4437 11.5749 12.531C11.3647 12.6182 11.1393 12.6631 10.9117 12.6631C10.6842 12.6631 10.4588 12.6182 10.2486 12.531C10.0384 12.4437 9.84747 12.3159 9.68676 12.1547L7.84878 10.3145C7.52391 9.98915 7.34144 9.54816 7.34144 9.08837C7.34144 8.62858 7.52391 8.18758 7.84878 7.86224L8.46077 7.24918C8.78564 6.92384 8.96811 6.48284 8.96811 6.02305C8.96811 5.56326 8.78564 5.12227 8.46077 4.79693L7.23679 3.5708C7.08661 3.39204 6.89913 3.24831 6.68751 3.1497C6.47589 3.0511 6.24526 3 6.0118 3C5.77834 3 5.54771 3.0511 5.33609 3.1497C5.12447 3.24831 4.93699 3.39204 4.78681 3.5708C1.56385 6.77113 3.08483 10.4675 6.3058 13.6888C9.52676 16.9102 13.2197 18.4343 16.4257 15.224C16.6055 15.0738 16.7501 14.886 16.8493 14.6738C16.9486 14.4616 17 14.2301 17 13.9959C17 13.7616 16.9486 13.5302 16.8493 13.318C16.7501 13.1058 16.6065 12.9179 16.4267 12.7677Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    240 429 7447
+  </a>
 </header>
+
+
