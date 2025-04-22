@@ -1,0 +1,50 @@
+    <section class="dixel-jumbo">
+      {% if module.image.src %}
+        {% set sizeAttrs = 'width="{{ module.image.width|escape_attr }}" height="{{ module.image.height|escape_attr }}"' %}
+        {% if module.image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.image.width|escape_attr }}" height="{{ module.image.height|escape_attr }}"' %}
+        {% elif module.image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.image.max_width|escape_attr }}" height="{{ module.image.max_height|escape_attr }}"' %}
+        {% endif %}
+         {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading|escape_attr }}"' : '' %}
+         <img src="{{ module.image.src|escape_url }}" alt="{{ module.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-jumbo-pic">
+      {% endif %}
+
+      <div class="dixel-jumbo-inner">
+        {% if module.title_html_tag == 'h1' %}
+            <h1 class="mobile-headline-h1 headline-h2 dixel-jumbo-title">{{ module.title }}</h1>
+        {% elif module.title_html_tag == 'h2' %}
+            <h2 class="mobile-headline-h1 headline-h2 dixel-jumbo-title">{{ module.title }}</h2>
+        {% elif module.title_html_tag == 'h3' %}
+            <h3 class="mobile-headline-h1 headline-h2 dixel-jumbo-title">{{ module.title }}</h3>
+        {% endif %}
+        <p class="mobile-body-2 body-1 dixel-jumbo-subtitle">{{ module.subtitle }}</p>
+        <div class="dixel-jumbo-button-wrapper">
+          <svg class="dixel-jumbo-button-left-corner" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8147e-06 30L0 30L40 30L40 0.0170932C39.9908 16.5778 26.5628 30 10 30L3.8147e-06 30Z" fill="white"/>
+          </svg>
+          {% set href = module.button.button_link.url.href %}
+          {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="button-primery dixel-jumbo-button"
+            {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+            {% else %}
+              href="{{ href|escape_url }}"
+            {% endif %}
+            {% if module.button.button_link.open_in_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if module.button.button_link.rel %}
+              rel="{{ module.button.button_link.rel|escape_attr }}"
+            {% endif %}
+            >
+            {{ module.button.button }}
+          </a>
+          <svg class="dixel-jumbo-button-right-corner" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30.0215 39.999C13.4529 39.999 0.0214845 26.5675 0.0214809 9.99899L0.021481 -1.19208e-05L4.76995e-07 -1.19211e-05L0 40L40 40L40 39.999L30.0215 39.999Z" fill="white"/>
+          </svg>
+        </div>
+      </div>
+    </section>

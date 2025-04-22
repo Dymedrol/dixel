@@ -1,0 +1,125 @@
+[ {
+  "id" : "8de169de-926d-3066-68da-cfc73e02cca9",
+  "name" : "phone_number",
+  "label" : "Phone number",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d88169c4-22a4-0545-0eb5-31b2f4ffc879",
+    "name" : "phone_text",
+    "label" : "Phone text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "+ (571) 447-1166"
+  }, {
+    "id" : "c0839630-9c2e-2304-1ba7-fc8301c73af7",
+    "name" : "phone_link",
+    "label" : "phone link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "+15714471166",
+        "type" : "PHONE_NUMBER"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "phone_text" : "+ (571) 447-1166",
+    "phone_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "+15714471166",
+        "type" : "PHONE_NUMBER"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "5ebc021c-4cbd-2623-c20a-0dd2199a729a",
+  "name" : "email",
+  "label" : "Email",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "contact@dixelmail.com",
+      "type" : "EMAIL_ADDRESS"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "0dc57c47-5c90-ee84-c4c0-227c851c84ef",
+  "name" : "adress",
+  "label" : "adress",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "12907 Crookston Lane, Rockville, Maryland, 20851"
+}, {
+  "id" : "7c80367b-5149-3c9f-0057-000ff87f7b01",
+  "name" : "privacy_policy",
+  "label" : "Privacy policy",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "489664e6-b4c7-9005-4605-d189611b8060",
+  "name" : "terms_and_onditions_",
+  "label" : "Terms and Сonditions link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

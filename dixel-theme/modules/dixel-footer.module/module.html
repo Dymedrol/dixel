@@ -1,0 +1,64 @@
+<footer class="dixel-footer">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="503" viewBox="0 0 1440 503" fill="none" class="dixel-footer-bg">
+    <path opacity="0.6" d="M-410.239 200.117C-410.239 200.117 -16.4882 452.585 154.98 470.732C247.498 480.523 351.277 449.312 450.525 391.471C549.773 333.629 652.765 245.167 745.758 240.029C838.75 234.892 922.332 312.725 1009.79 354.241C1097.24 395.756 1188.47 401.048 1287.05 348.916C1385.62 296.783 1491.34 187.687 1591.18 124.909C1691.01 62.1301 1785.09 45.8913 1832.23 37.9437L1879.34 30.1066" stroke="url(#paint0_linear_653_6152)" stroke-width="60"/>
+    <defs>
+      <linearGradient id="paint0_linear_653_6152" x1="1879.55" y1="30.1812" x2="-205.619" y2="865.46" gradientUnits="userSpaceOnUse">
+        <stop offset="0.159336" stop-color="#211F28"/>
+        <stop offset="1" stop-color="#422F8F" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="container">
+    <div class="dixel-footer-inner">
+      <div class="dixel-footer-block1">
+        <a href="/">
+          <img src="images/dixel-logo.svg" alt="" class="dixel-footer__logo">
+        </a>
+        <div class="mobile-headline-h2 headline-h2 dixel-footer__title">Got a vision for your space?</div>
+        <div class="mobile-body-2 body-2 dixel-footer__text dixel-footer__text1">We’re here to bring it to life—seamlessly and stress-free.</div>
+        <div class="mobile-body-2 body-2 dixel-footer__text dixel-footer__text2">Just give us a call</div>
+        {% set href = module.phone_number.phone_link.url.href %}
+        <a href="{{ href|escape_url }}" class="mobile-headline-h3 headline-h4 dixel-footer__link-big">{{ module.phone_number.phone_text }}</a>
+      </div>
+      <div class="dixel-footer-block2">
+        <div class="dixel-footer-block2-contuct-us">
+          <div class="mobile-body-2 body-2 dixel-footer__text dixel-footer__text2">Or email us at</div>
+          {% set href = module.email.url.href %}
+          <a href="mailto:{{ href }}" class="mobile-headline-h3 headline-h4 dixel-footer__link-big">{{ href }}</a>
+        </div>
+        <div class="dixel-footer-block2-menu">
+          <div class="dixel-footer-block2-menu__col">
+            {% set menu = menu("Dixel menu") %}
+            {% for link in menu.children %}
+              <a href="{{link.url if link.url else '#'}}" class="mobile-body-2 body-2 dixel-footer-block2-menu__link">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+          <div class="dixel-footer-block2-menu__col">
+            <div class="mobile-body-2 body-2 dixel-footer-block2-menu__text">{{ module.adress }}</div>
+            <div class="dixel-footer-block2-menu__socials">
+              <a href="/" class="dixel-footer-block2-menu__socials-item">
+                <img src="{{ module_asset_url("facebook.svg") }}" alt="facebook">
+              </a>
+              <a href="/" class="dixel-footer-block2-menu__socials-item">
+                <img src="{{ module_asset_url("instagram.svg") }}" alt="instagram">
+              </a>
+              <a href="/" class="dixel-footer-block2-menu__socials-item">
+                <img src="{{ module_asset_url("x.svg") }}" alt="x" >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dixel-footer-block3">
+        <a href="{{ module.privacy_policy.url.href }}" class="mobile-body-2 body-3 dixel-footer-bottom-link">Privacy policy</a>
+        <a href="{{ module.terms_and_onditions_.url.href }}" class="mobile-body-2 body-3 dixel-footer-bottom-link">Terms and Сonditions</a>
+        <div class="mobile-body-2 body-3 dixel-footer-bottom-link dixel-footer-copy">Copyright © {{ year }} | All rights reserved</div>
+        <div class="dixel-footer-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.33325 6.66667L7.99992 4M7.99992 4L10.6666 6.66667M7.99992 4V12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
