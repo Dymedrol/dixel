@@ -1790,6 +1790,12 @@ body {
     margin-top: 24px;
 }
 
+@media((min-width: 1280px)) {
+.dixel-cases-arrows {
+    display: none;
+}
+}
+
 .dixel-advantages {
     padding-top: 40px;
     padding-bottom: 40px
@@ -2271,6 +2277,24 @@ body {
     position: absolute;
     bottom: 0;
     right: 0
+}
+
+.dixel-blog-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+@media((min-width: 720px)) {
+.dixel-blog-arrows {
+    margin-top: 40px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-blog-arrows {
+    display: none;
+}
 }
 
 .dixel-our-cases {

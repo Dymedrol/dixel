@@ -120,34 +120,24 @@ $(document).ready(function() {
     });
 
     // dixel blog module slider
-
-    $('.dixel-blog-module-cards').slick({
-        infinite: false,
-        dots: false,
-        mobilefirst: true,
-        adaptiveHeight: true,
-        prevArrow: $('.dixel-advantages-prev'),
-        nextArrow: $('.dixel-advantages-next'),
-        responsive: [
-            {
-                breakpoint: 9999,
-                settings: "unslick"
-            },
-            {
-                breakpoint: 1280,
-                settings: {
-                    draggable: true,
-                    accessibility: false,
-                    centerMode: true,
-                    variableWidth: true,
-                    slidesToShow: 1,
-                    arrows: true,
-                    dots: false,
-                    swipeToSlide: true,
-                    infinite: false
+    var blogModuleSwiper = new Swiper(".dixel-blog-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".dixel-blog-next",
+            prevEl: ".dixel-blog-prev",
+        },
+        on: {
+            resize: function enableOnlyMobile(swiper){
+                // Disable the slider when the window width is less than or equal to 960
+                if(1280 < window.innerWidth){
+                    blogModuleSwiper.disable()
+                    blogModuleSwiper.el.classList.add('-non-slider')
+                }else{
+                    blogModuleSwiper.enable()
+                    blogModuleSwiper.el.classList.remove('-non-slider')
                 }
-            }
-        ]
+            },
+        }
     });
-
 });
