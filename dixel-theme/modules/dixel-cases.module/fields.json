@@ -1,0 +1,107 @@
+[ {
+  "id" : "04d4c60a-727e-3707-6742-62477c28bb01",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Our Cases <strong>􁘲</strong>"
+}, {
+  "id" : "cd85276b-51d9-a4f0-bec2-9afccd7f9baf",
+  "name" : "category",
+  "label" : "Category",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "343f65db-dd2b-b9f2-d13c-181650b92f4c",
+    "name" : "category_title",
+    "label" : "Category title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "18b12294-fa5d-79b9-4307-74422e437903",
+    "name" : "card",
+    "label" : "Card",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "2de608b2-1f93-8a60-9026-f4690206e00f",
+      "name" : "card_title",
+      "label" : "Card title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "title"
+    }, {
+      "id" : "8b712bc6-e4ae-00ff-2953-0a31fab7c8f5",
+      "name" : "card_image",
+      "label" : "Card image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "id" : "bdaf89ae-5a06-1418-14f2-d4ea8e9b026b",
+      "name" : "url_field",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

@@ -17,8 +17,8 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
-    "max" : null,
+    "min" : 1,
+    "max" : 7,
     "sorting_label_field" : null,
     "default" : null
   },
@@ -27,10 +27,10 @@
   "show_loading" : false,
   "type" : "image",
   "display_width" : null,
-  "default" : {
+  "default" : [ {
     "size_type" : "auto",
     "src" : "",
     "alt" : null,
     "loading" : "lazy"
-  }
+  } ]
 } ]

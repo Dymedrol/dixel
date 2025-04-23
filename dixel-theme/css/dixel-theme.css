@@ -1709,15 +1709,17 @@ body {
     stroke: #fff
 }
 
-.dixel-cases-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    overflow-x: hidden
+.dixel-cases-cards-wrapper {
+    display: none;
+}
+
+.dixel-cases-cards-wrapper_active {
+    display: block;
 }
 
 .dixel-cases-card {
-    position: relative
+    position: relative;
+    margin-right: 20px;
 }
 
 .dixel-cases-card-inner {
@@ -1791,6 +1793,18 @@ body {
 }
 }
 
+.dixel-advantages .slick-track {
+    display: flex !important;
+}
+
+.dixel-advantages .slick-slide {
+    height: inherit !important;
+}
+
+.dixel-advantages .slick-list {
+    overflow: visible !important;
+}
+
 .dixel-advantages__title {
     margin-bottom: 24px;
     color: #251b4c
@@ -1814,7 +1828,6 @@ body {
     gap: 12px;
     width: 100%;
     margin: 0 auto;
-    overflow-x: hidden
 }
 
 @media((min-width: 720px)) {
@@ -1828,29 +1841,33 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 1200px;
-    overflow-x: visible
 }
 }
 
 .dixel-advantages-card {
     width: 327px;
+    min-height: 327px;
     padding: 24px;
     flex-shrink: 0;
     border-radius: 40px;
     background: #fff;
-    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.1))
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.1));
+
+    margin-right: 12px;
 }
 
 @media((min-width: 720px)) {
 .dixel-advantages-card {
     width: 380px;
-    padding: 32px
+    padding: 32px;
+    margin-right: 20px;
 }
 }
 
 @media((min-width: 1280px)) {
 .dixel-advantages-card {
-    flex-grow: 1
+    flex-grow: 1;
+    margin-right: 0;
 }
 }
 
@@ -1885,6 +1902,19 @@ body {
 .dixel-advantages-card__text {
     color: #251b4c;
     opacity: .5
+}
+
+.dixel-advantages-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 0 16px;
+}
+
+@media((min-width: 1280px)) {
+.dixel-advantages-arrows {
+    display: none;
+}
 }
 
 .dixel-client-say {

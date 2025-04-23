@@ -1,0 +1,70 @@
+[ {
+  "id" : "968dda99-51bb-5ab1-43c5-92171da00945",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Our advantages <strong>􀬓</strong>"
+}, {
+  "id" : "7d518352-031b-803a-0725-d8498f033605",
+  "name" : "card",
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1626ed9d-c9be-d96e-6b1b-ff0126493eb4",
+    "name" : "cart_title",
+    "label" : "Cart title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "d0998598-b07d-efcd-3c2f-f7e31b9afb60",
+    "name" : "card_text",
+    "label" : "Card text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "6e5b6176-a5ab-711b-b54d-2e84d42d7689",
+    "name" : "card_image",
+    "label" : "Card image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

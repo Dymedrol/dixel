@@ -16,7 +16,6 @@ $(document).ready(function() {
 
     // our services slider
     $('.dixel-our-services-content').slick({
-        dots: true,
         infinite: false,
         speed: 300,
         dots: false,
@@ -39,8 +38,8 @@ $(document).ready(function() {
         ]
     });
 
-    // brands slider
 
+    // brands slider
     $('.dixel-brands-logos').slick({
         dots: false,
         infinite: true,
@@ -71,4 +70,70 @@ $(document).ready(function() {
             }
         ]
     });
+
+    // cases tabs and slider
+
+    $('.dixel-cases-tab-menu__item').click(function () {
+        const module = $(this).closest('.dixel-cases');
+        const tabIndex = $(this).attr('data-tab-number');
+        module.find('.dixel-cases-tab-menu__item').removeClass('dixel-cases-tab-menu__item_active');
+        $(this).addClass('dixel-cases-tab-menu__item_active');
+        module.find('.dixel-cases-cards-wrapper').removeClass('dixel-cases-cards-wrapper_active');
+        module.find(`#tab-${tabIndex}`).addClass('dixel-cases-cards-wrapper_active');
+    });
+
+    // $('.dixel-cases-cards').each(function(index, element) {
+    //     $(element).slick({
+    //         infinite: false,
+    //         dots: false,
+    //         mobilefirst: true,
+    //         variableWidth: true,
+    //         initialSlide: 4,
+    //         edgeFriction: 0,
+    //         prevArrow: $('.dixel-cases-prev'),
+    //         nextArrow: $('.dixel-cases-next'),
+    //         edgeFriction: 0,
+    //     });
+    // });
+
+
+
+    // $('.dixel-cases-cards').slick({
+    //     infinite: true,
+    //     speed: 300,
+    //     dots: false,
+    //     mobilefirst: true,
+    //     variableWidth: true,
+    //     edgeFriction: 0,
+    //     prevArrow: $('.dixel-cases-prev'),
+    //     nextArrow: $('.dixel-cases-next'),
+    // });
+
+    // dixel Our advantages slider
+
+    $('.dixel-advantages-layout').slick({
+        infinite: true,
+        dots: false,
+        mobilefirst: true,
+        adaptiveHeight: true,
+        prevArrow: $('.dixel-advantages-prev'),
+        nextArrow: $('.dixel-advantages-next'),
+        responsive: [
+            {
+                breakpoint: 9999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 1,
+                    variableWidth: true,
+                    customPaging: 20,
+                }
+            }
+        ]
+    });
+
+
+
 });
