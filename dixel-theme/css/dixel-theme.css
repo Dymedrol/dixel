@@ -287,7 +287,8 @@ body {
 .dixel-main {
     background-color: #fff;
     border-radius: 0px 0px 32px 32px;
-    padding-top: 105px
+    padding-top: 105px;
+    overflow: hidden;
 }
 
 @media((min-width: 720px)) {
@@ -516,6 +517,10 @@ body {
 .button-circle-secondary.size-m {
     width: 48px;
     height: 48px
+}
+
+.button-circle-secondary.reverse svg {
+    transform: rotate(180deg)
 }
 
 @media((min-width: 720px)) {
@@ -1241,13 +1246,12 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
-    overflow: hidden;
 }
 
 @media((min-width: 720px)) {
 .dixel-our-services__container {
     width: 590px;
-    padding: 0
+    padding: 0;
 }
 }
 
@@ -1276,14 +1280,12 @@ body {
     font-weight: 400
 }
 
-.dixel-our-services-content {
-    overflow-x: visible;
+.dixel-our-services-swiper {
+    overflow: visible;
 }
 
-.dixel-our-services-content .slick-list {
-    overflow: visible;
-    /*overflow-x: hidden;*/
-    /*overflow-y: visible;*/
+.dixel-our-services-content {
+
 }
 
 @media((min-width: 720px)) {
@@ -1322,12 +1324,11 @@ body {
     width: fit-content;
     height: fit-content;
     filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.1));
-    margin-right: 20px;
 }
 
 @media((min-width: 720px)) {
 .dixel-our-services-card {
-    margin-right: 0;
+    margin-right: 0 !important;
 }
 }
 
@@ -2214,20 +2215,25 @@ body {
 
 .dixel-blog-module-cards {
     display: flex;
-    gap: 20px;
-    overflow: hidden;
     max-width: 1200px;
     margin: 0 auto
 }
 
 .dixel-blog-module-card {
     width: 384px;
-    flex-shrink: 0
+    flex-shrink: 0;
+    margin-right: 20px;
 }
 
 @media((min-width: 720px)) {
 .dixel-blog-module-card {
     width: 384px
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-blog-module-card {
+    margin-right: 0;
 }
 }
 
@@ -5042,6 +5048,10 @@ body {
     padding-top: 52px;
     padding-bottom: 52px
 }
+}
+
+.dixel-client-say {
+    overflow: hidden;
 }
 
 .dixel-client-say__title {

@@ -15,28 +15,50 @@ $(document).ready(function() {
 
 
     // our services slider
-    $('.dixel-our-services-content').slick({
-        infinite: false,
-        speed: 300,
-        dots: false,
-        mobilefirst: true,
-        prevArrow: $('.dixel-our-services-prev'),
-        nextArrow: $('.dixel-our-services-next'),
-        responsive: [
-            {
-                breakpoint: 9999,
-                settings: "unslick"
-            },
-            {
-                breakpoint: 720,
-                settings: {
-                    slidesToShow: 1,
-                    variableWidth: true,
-                    customPaging: 20,
+
+    var ourServicesSwiper = new Swiper(".dixel-our-services-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".dixel-our-services-next",
+            prevEl: ".dixel-our-services-prev",
+        },
+        on: {
+            resize: function enableOnlyMobile(swiper){
+                // Disable the slider when the window width is less than or equal to 960
+                if(720 < window.innerWidth){
+                    ourServicesSwiper.disable()
+                    ourServicesSwiper.el.classList.add('-non-slider')
+                }else{
+                    ourServicesSwiper.enable()
+                    ourServicesSwiper.el.classList.remove('-non-slider')
                 }
-            }
-        ]
+            },
+        }
     });
+
+    // $('.dixel-our-services-content').slick({
+    //     infinite: false,
+    //     speed: 300,
+    //     dots: false,
+    //     mobilefirst: true,
+    //     prevArrow: $('.dixel-our-services-prev'),
+    //     nextArrow: $('.dixel-our-services-next'),
+    //     responsive: [
+    //         {
+    //             breakpoint: 9999,
+    //             settings: "unslick"
+    //         },
+    //         {
+    //             breakpoint: 720,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 variableWidth: true,
+    //                 customPaging: 20,
+    //             }
+    //         }
+    //     ]
+    // });
 
 
     // brands slider
@@ -136,14 +158,45 @@ $(document).ready(function() {
 
     // Dixel client says slider
 
-    $('.dixel-client-say-cards').slick({
-        infinite: true,
+    // $('.dixel-client-say-cards').slick({
+    //     infinite: true,
+    //     dots: false,
+    //     mobilefirst: true,
+    //     adaptiveHeight: true,
+    //     fade: true,
+    //     prevArrow: $('.dixel-client-say-prev'),
+    //     nextArrow: $('.dixel-client-say-next'),
+    // });
+
+    // dixel blog module slider
+
+    $('.dixel-blog-module-cards').slick({
+        infinite: false,
         dots: false,
         mobilefirst: true,
         adaptiveHeight: true,
-        fade: true,
-        prevArrow: $('.dixel-client-say-prev'),
-        nextArrow: $('.dixel-client-say-next'),
+        prevArrow: $('.dixel-advantages-prev'),
+        nextArrow: $('.dixel-advantages-next'),
+        responsive: [
+            {
+                breakpoint: 9999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 1280,
+                settings: {
+                    draggable: true,
+                    accessibility: false,
+                    centerMode: true,
+                    variableWidth: true,
+                    slidesToShow: 1,
+                    arrows: true,
+                    dots: false,
+                    swipeToSlide: true,
+                    infinite: false
+                }
+            }
+        ]
     });
 
 });

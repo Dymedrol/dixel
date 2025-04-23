@@ -1,52 +1,55 @@
     <section class="dixel-our-services">
       <div class="dixel-our-services__container">
         <h2 class="mobile-headline-h2 headline-h2 dixel-our-services-title">{{ module.title }}</h2>
-        <div class="dixel-our-services-content">
-          {% for item in module.card %}
+        <div class="swiper dixel-our-services-swiper">
+          <div class="dixel-our-services-content swiper-wrapper">
+            {% for item in module.card %}
             {% set href = item.card_link.url.href %}
             {% if item.card_link.url.type is equalto "EMAIL_ADDRESS" %}
-              {% set href = "mailto:" + href %}
+            {% set href = "mailto:" + href %}
             {% endif %}
-            <a class="dixel-our-services-card"
+            <a class="dixel-our-services-card swiper-slide"
                {% if item.card_link.url.type is equalto "CALL_TO_ACTION"  %}
-                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-                {% else %}
-                  href="{{ href|escape_url }}"
-                {% endif %}
-                {% if item.card_link.open_in_new_tab %}
-                  target="_blank"
-                {% endif %}
-                {% if item.card_link.rel %}
-                  rel="{{ item.card_link.rel|escape_attr }}"
-                {% endif %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+            {% else %}
+            href="{{ href|escape_url }}"
+            {% endif %}
+            {% if item.card_link.open_in_new_tab %}
+            target="_blank"
+            {% endif %}
+            {% if item.card_link.rel %}
+            rel="{{ item.card_link.rel|escape_attr }}"
+            {% endif %}
             >
-              <div class="dixel-our-services-card-inner">
-                <div class="dixel-our-services-card-layout">
-                  {% if item.card_image.src %}
-                    {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
-                    {% if item.card_image.size_type == 'auto' %}
-                      {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-                    {% elif item.card_image.size_type == 'auto_custom_max' %}
-                      {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-                    {% endif %}
-                     {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
-                    <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}  class="dixel-our-services-card-pic">
-                  {% endif %}
-                  <div class="dixel-our-services-card__text-block">
-                    <div class="mobile-headline-h3 headline-h4 dixel-our-services-card-title">{{ item.card_title }}</div>
-                    <div class="mobile-body-2 body-3 dixel-our-services-card-text">{{ item.card_text }}</div>
-                  </div>
+            <div class="dixel-our-services-card-inner">
+              <div class="dixel-our-services-card-layout">
+                {% if item.card_image.src %}
+                {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
+                {% if item.card_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.card_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}  class="dixel-our-services-card-pic">
+                {% endif %}
+                <div class="dixel-our-services-card__text-block">
+                  <div class="mobile-headline-h3 headline-h4 dixel-our-services-card-title">{{ item.card_title }}</div>
+                  <div class="mobile-body-2 body-3 dixel-our-services-card-text">{{ item.card_text }}</div>
                 </div>
               </div>
+            </div>
 
-                <div class="button-circle-primery size-m dixel-our-services-card-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                    <path d="M14.5 16L18.5 12M18.5 12L14.5 8M18.5 12L6.5 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
+            <div class="button-circle-primery size-m dixel-our-services-card-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M14.5 16L18.5 12M18.5 12L14.5 8M18.5 12L6.5 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             </a>
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
+
         <div class="dixel-our-services-arrows">
           <div class="button-circle-secondary size-s dixel-our-services-prev">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
