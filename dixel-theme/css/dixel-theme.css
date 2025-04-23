@@ -1960,10 +1960,44 @@ body {
     font-weight: 400
 }
 
+.dixel-client-say-cards-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    padding: 40px;
+}
+
+@media((min-width: 720px)) {
+.dixel-client-say-cards-wrapper .slick-list {
+    overflow: visible !important;
+}
+}
+
+
+
 .dixel-client-say-cards {
     display: flex;
     justify-content: center;
-    margin-bottom: 32px
+    width: 343px;
+    margin: 0 auto;
+}
+
+.dixel-client-say-cards .slick-list {
+
+}
+
+@media((min-width: 720px)) {
+.dixel-client-say-cards {
+    width: 600px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-client-say-cards {
+    width: 680px;
+}
 }
 
 .dixel-client-say-card {
@@ -1973,8 +2007,10 @@ body {
     border-radius: 24px;
     background: #fff;
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, .05), -4px -4px 40px 0px rgba(0, 0, 0, .05)
+
 }
 
+@media((min-width: 720px)) {
 .dixel-client-say-card:before {
     display: block;
     width: 100%;
@@ -1989,11 +2025,14 @@ body {
     transform: rotate(-5deg);
     z-index: -1
 }
+}
 
 @media((min-width: 720px)) {
 .dixel-client-say-card {
+    margin: 0 80px;
     width: 600px;
-    padding: 40px
+    padding: 40px;
+    box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, .05), -4px -4px 40px 0px rgba(0, 0, 0, .05);
 }
 }
 
@@ -2065,6 +2104,32 @@ body {
 
 .dixel-client-say-card__footer-logo-button {
     margin-left: auto
+}
+
+.dixel-client-say-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+@media((min-width: 720px)) {
+.dixel-client-say-arrows {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 640px;
+    height: fit-content;
+    padding: 0 40px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-client-say-arrows {
+    width: 800px;
+}
 }
 
 .dixel-client-say-socials {

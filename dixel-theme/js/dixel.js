@@ -134,6 +134,16 @@ $(document).ready(function() {
         ]
     });
 
+    // Dixel client says slider
 
+    $('.dixel-client-say-cards').slick({
+        infinite: true,
+        dots: false,
+        mobilefirst: true,
+        adaptiveHeight: true,
+        fade: true,
+        prevArrow: $('.dixel-client-say-prev'),
+        nextArrow: $('.dixel-client-say-next'),
+    });
 
 });

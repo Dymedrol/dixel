@@ -1,0 +1,25 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 189230951064,
+  "other_assets" : [ {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/yelp-logo.png",
+    "autoload" : false,
+    "name" : "yelp-logo.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/google-logo2.png",
+    "autoload" : false,
+    "name" : "google-logo2.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/th-logo.png",
+    "autoload" : false,
+    "name" : "th-logo.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/facebook-logo.png",
+    "autoload" : false,
+    "name" : "facebook-logo.png"
+  } ],
+  "label" : "Dixel client say",
+  "is_available_for_new_content" : true
+}
