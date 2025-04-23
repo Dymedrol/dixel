@@ -3,19 +3,21 @@
         <div class="dixel-brands-circle">
           <div class="mobile-headline-h2 headline-h3 dixel-brands__title">{{ module.title }}</div>
           <div class="dixel-brands-container">
-            <div class="dixel-brands-logos">
-              {% for item in module.image_field %}
+            <div class="swiper-container dixel-brands-swiper">
+              <div class="dixel-brands-logos swiper-wrapper">
+                {% for item in module.image_field %}
                 {% if item.src %}
-                  {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
-                  {% if item.size_type == 'auto' %}
-                    {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
-                  {% elif item.size_type == 'auto_custom_max' %}
-                    {% set sizeAttrs = 'width="{{ item.max_width|escape_attr }}" height="{{ item.max_height|escape_attr }}"' %}
-                  {% endif %}
-                   {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading|escape_attr }}"' : '' %}
-                  <img src="{{ item.src|escape_url }}" alt="{{ item.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-brands__logo">
+                {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
+                {% if item.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
+                {% elif item.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.max_width|escape_attr }}" height="{{ item.max_height|escape_attr }}"' %}
                 {% endif %}
-              {% endfor %}
+                {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.src|escape_url }}" alt="{{ item.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-brands__logo">
+                {% endif %}
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>

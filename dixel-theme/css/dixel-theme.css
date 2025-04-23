@@ -1721,6 +1721,8 @@ body {
 .dixel-cases-card {
     position: relative;
     margin-right: 20px;
+    width: fit-content;
+    height: fit-content;
 }
 
 .dixel-cases-card-inner {
@@ -1780,6 +1782,24 @@ body {
     position: absolute;
     bottom: 0;
     right: 0
+}
+
+.dixel-cases-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+@media((min-width: 720px)) {
+.dixel-advantages {
+    margin-top: 40px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-advantages {
+    display: none;
+}
 }
 
 .dixel-advantages {

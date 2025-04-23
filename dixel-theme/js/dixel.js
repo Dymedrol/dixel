@@ -15,7 +15,6 @@ $(document).ready(function() {
 
 
     // our services slider
-
     var ourServicesSwiper = new Swiper(".dixel-our-services-swiper", {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -36,30 +35,6 @@ $(document).ready(function() {
             },
         }
     });
-
-    // $('.dixel-our-services-content').slick({
-    //     infinite: false,
-    //     speed: 300,
-    //     dots: false,
-    //     mobilefirst: true,
-    //     prevArrow: $('.dixel-our-services-prev'),
-    //     nextArrow: $('.dixel-our-services-next'),
-    //     responsive: [
-    //         {
-    //             breakpoint: 9999,
-    //             settings: "unslick"
-    //         },
-    //         {
-    //             breakpoint: 720,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 variableWidth: true,
-    //                 customPaging: 20,
-    //             }
-    //         }
-    //     ]
-    // });
-
 
     // brands slider
     $('.dixel-brands-logos').slick({
@@ -94,7 +69,6 @@ $(document).ready(function() {
     });
 
     // cases tabs and slider
-
     $('.dixel-cases-tab-menu__item').click(function () {
         const module = $(this).closest('.dixel-cases');
         const tabIndex = $(this).attr('data-tab-number');
@@ -104,32 +78,14 @@ $(document).ready(function() {
         module.find(`#tab-${tabIndex}`).addClass('dixel-cases-cards-wrapper_active');
     });
 
-    // $('.dixel-cases-cards').each(function(index, element) {
-    //     $(element).slick({
-    //         infinite: false,
-    //         dots: false,
-    //         mobilefirst: true,
-    //         variableWidth: true,
-    //         initialSlide: 4,
-    //         edgeFriction: 0,
-    //         prevArrow: $('.dixel-cases-prev'),
-    //         nextArrow: $('.dixel-cases-next'),
-    //         edgeFriction: 0,
-    //     });
-    // });
-
-
-
-    // $('.dixel-cases-cards').slick({
-    //     infinite: true,
-    //     speed: 300,
-    //     dots: false,
-    //     mobilefirst: true,
-    //     variableWidth: true,
-    //     edgeFriction: 0,
-    //     prevArrow: $('.dixel-cases-prev'),
-    //     nextArrow: $('.dixel-cases-next'),
-    // });
+    var casesSwiper = new Swiper(".dixel-cases-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".dixel-cases-next",
+            prevEl: ".dixel-cases-prev",
+        },
+    });
 
     // dixel Our advantages slider
 
