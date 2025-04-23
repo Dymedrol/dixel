@@ -110,16 +110,14 @@ $(document).ready(function() {
     });
 
     // Dixel client says slider
-
-    // $('.dixel-client-say-cards').slick({
-    //     infinite: true,
-    //     dots: false,
-    //     mobilefirst: true,
-    //     adaptiveHeight: true,
-    //     fade: true,
-    //     prevArrow: $('.dixel-client-say-prev'),
-    //     nextArrow: $('.dixel-client-say-next'),
-    // });
+    var clientSaySwiper = new Swiper(".dixel-client-say-swiper", {
+        effect: "fade",
+        autoHeight: true,
+        navigation: {
+            nextEl: ".dixel-client-say-next",
+            prevEl: ".dixel-client-say-prev",
+        },
+    });
 
     // dixel blog module slider
 
