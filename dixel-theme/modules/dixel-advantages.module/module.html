@@ -3,24 +3,27 @@
     <h2 class="mobile-headline-h2 headline-h3 dixel-advantages__title">Our advantages <span>􀬓</span></h2>
     </div>
 
-    <div class="dixel-advantages-layout">
-    {% for item in module.card %}
-      <div class="dixel-advantages-card">
-          {% if item.card_image.src %}
-            {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
-            {% if item.card_image.size_type == 'auto' %}
-              {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-            {% elif item.card_image.size_type == 'auto_custom_max' %}
-              {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-            {% endif %}
-             {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
-            <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-advantages-card__pic">
-          {% endif %}
-        <div class="headline-h4 dixel-advantages-card__title">{{ item.cart_title }}</div>
-        <div class="body-3 dixel-advantages-card__text">{{ item.card_text }}</div>
-      </div>
-    {% endfor %}
+    <div class="swiper dixel-advantages-swiper">
+        <div class="dixel-advantages-layout swiper-wrapper">
+            {% for item in module.card %}
+                <div class="dixel-advantages-card swiper-slide">
+                {% if item.card_image.src %}
+                {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
+                {% if item.card_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.card_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-advantages-card__pic">
+                {% endif %}
+                <div class="headline-h4 dixel-advantages-card__title">{{ item.cart_title }}</div>
+                <div class="body-3 dixel-advantages-card__text">{{ item.card_text }}</div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
+
     <div class="dixel-advantages-arrows">
         <div class="button-circle-secondary size-s dixel-advantages-prev">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -88,28 +88,25 @@ $(document).ready(function() {
     });
 
     // dixel Our advantages slider
-
-    $('.dixel-advantages-layout').slick({
-        infinite: true,
-        dots: false,
-        mobilefirst: true,
-        adaptiveHeight: true,
-        prevArrow: $('.dixel-advantages-prev'),
-        nextArrow: $('.dixel-advantages-next'),
-        responsive: [
-            {
-                breakpoint: 9999,
-                settings: "unslick"
-            },
-            {
-                breakpoint: 1280,
-                settings: {
-                    slidesToShow: 1,
-                    variableWidth: true,
-                    customPaging: 20,
+    var advantagesSwiper = new Swiper(".dixel-advantages-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".dixel-advantages-next",
+            prevEl: ".dixel-advantages-prev",
+        },
+        on: {
+            resize: function enableOnlyMobile(swiper){
+                // Disable the slider when the window width is less than or equal to 960
+                if(1280 < window.innerWidth){
+                    advantagesSwiper.disable()
+                    advantagesSwiper.el.classList.add('-non-slider')
+                }else{
+                    advantagesSwiper.enable()
+                    advantagesSwiper.el.classList.remove('-non-slider')
                 }
-            }
-        ]
+            },
+        }
     });
 
     // Dixel client says slider

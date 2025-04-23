@@ -1790,18 +1790,6 @@ body {
     margin-top: 24px;
 }
 
-@media((min-width: 720px)) {
-.dixel-advantages {
-    margin-top: 40px;
-}
-}
-
-@media((min-width: 1280px)) {
-.dixel-advantages {
-    display: none;
-}
-}
-
 .dixel-advantages {
     padding-top: 40px;
     padding-bottom: 40px
@@ -1814,16 +1802,8 @@ body {
 }
 }
 
-.dixel-advantages .slick-track {
-    display: flex !important;
-}
-
-.dixel-advantages .slick-slide {
-    height: inherit !important;
-}
-
-.dixel-advantages .slick-list {
-    overflow: visible !important;
+.dixel-advantages .swiper {
+    overflow: visible;
 }
 
 .dixel-advantages__title {
@@ -1888,23 +1868,7 @@ body {
 @media((min-width: 1280px)) {
 .dixel-advantages-card {
     flex-grow: 1;
-    margin-right: 0;
-}
-}
-
-.dixel-advantages-card:first-child {
-    margin-left: 16px
-}
-
-@media((min-width: 720px)) {
-.dixel-advantages-card:first-child {
-    margin-left: 40px
-}
-}
-
-@media((min-width: 1280px)) {
-.dixel-advantages-card:first-child {
-    margin-left: 0
+    margin-right: 0 !important;
 }
 }
 
