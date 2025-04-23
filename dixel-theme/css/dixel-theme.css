@@ -128,6 +128,10 @@ table {
     border-spacing: 0
 }
 
+a {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: "DOSS";
     src: url("https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/fonts/DOSS-Acid.ttf") format("truetype");
@@ -889,6 +893,10 @@ body {
     text-decoration: none
 }
 
+.dixel-footer__link-big:hover {
+    opacity: .5;
+}
+
 .dixel-footer-block2 {
     margin-bottom: 40px
 }
@@ -945,9 +953,13 @@ body {
 }
 
 .dixel-footer-block2-menu__link {
-    color: #fff;
-    text-decoration: none;
-    font-feature-settings: "ss01" on
+     color: #fff;
+     text-decoration: none;
+     font-feature-settings: "ss01" on
+ }
+
+.dixel-footer-block2-menu__link:hover {
+    opacity: .5;
 }
 
 .dixel-footer-block2-menu__text {
@@ -997,6 +1009,10 @@ body {
     color: hsla(0, 0%, 100%, .5);
     text-decoration: none;
     font-feature-settings: "ss01" on
+}
+
+.dixel-footer-bottom-link:hover {
+    color: hsla(0, 0%, 100%, 1);
 }
 
 @media((min-width: 720px)) {
@@ -1518,14 +1534,16 @@ body {
 }
 
 .dixel-brands__logo {
-    height: 22px;
+    height: 22px !important;
     width: auto;
-    object-fit: cover
+    object-fit: cover;
+    margin-right: 64px;
 }
 
 @media((min-width: 720px)) {
 .dixel-brands__logo {
-    height: 36px
+    height: 36px !important;
+    margin-right: 0;
 }
 }
 

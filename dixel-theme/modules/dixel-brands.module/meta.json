@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 189196405354,
+  "other_assets" : [ {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/character.svg",
+    "autoload" : false,
+    "name" : "character.svg"
+  } ],
+  "label" : "Dixel brands",
+  "is_available_for_new_content" : true
+}

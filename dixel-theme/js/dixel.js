@@ -13,8 +13,8 @@ $(document).ready(function() {
         mobileMenu.css('display', 'none');
     });
 
-    // our services slider
 
+    // our services slider
     $('.dixel-our-services-content').slick({
         dots: true,
         infinite: false,
@@ -36,9 +36,39 @@ $(document).ready(function() {
                     customPaging: 20,
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
+        ]
+    });
+
+    // brands slider
+
+    $('.dixel-brands-logos').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        dots: false,
+        mobilefirst: true,
+        responsive: [
+            {
+                breakpoint: 9999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    speed: 5000,
+                    autoplay: true,
+                    autoplaySpeed: 0,
+                    centerMode: true,
+                    cssEase: 'linear',
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    variableWidth: true,
+                    infinite: true,
+                    initialSlide: 1,
+                    arrows: false,
+                    buttons: false
+                }
+            }
         ]
     });
 });

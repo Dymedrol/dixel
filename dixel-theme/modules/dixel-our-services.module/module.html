@@ -3,7 +3,23 @@
         <h2 class="mobile-headline-h2 headline-h2 dixel-our-services-title">{{ module.title }}</h2>
         <div class="dixel-our-services-content">
           {% for item in module.card %}
-            <div class="dixel-our-services-card">
+            {% set href = item.card_link.url.href %}
+            {% if item.card_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            <a class="dixel-our-services-card"
+               {% if item.card_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.card_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.card_link.rel %}
+                  rel="{{ item.card_link.rel|escape_attr }}"
+                {% endif %}
+            >
               <div class="dixel-our-services-card-inner">
                 <div class="dixel-our-services-card-layout">
                   {% if item.card_image.src %}
@@ -22,28 +38,13 @@
                   </div>
                 </div>
               </div>
-                {% set href = item.card_link.url.href %}
-                {% if item.card_link.url.type is equalto "EMAIL_ADDRESS" %}
-                  {% set href = "mailto:" + href %}
-                {% endif %}
-                <a class="button-circle-primery size-m dixel-our-services-card-circle"
-                  {% if item.card_link.url.type is equalto "CALL_TO_ACTION"  %}
-                    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-                  {% else %}
-                    href="{{ href|escape_url }}"
-                  {% endif %}
-                  {% if item.card_link.open_in_new_tab %}
-                    target="_blank"
-                  {% endif %}
-                  {% if item.card_link.rel %}
-                    rel="{{ item.card_link.rel|escape_attr }}"
-                  {% endif %}
-                  >
+
+                <div class="button-circle-primery size-m dixel-our-services-card-circle">
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                     <path d="M14.5 16L18.5 12M18.5 12L14.5 8M18.5 12L6.5 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                </a>
-            </div>
+                </div>
+            </a>
           {% endfor %}
         </div>
         <div class="dixel-our-services-arrows">
