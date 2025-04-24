@@ -1,0 +1,33 @@
+<section class="dixel-services-page">
+    <div class="container">
+        <div class="dixel-services-page-header">
+            <h2 class="mobile-headline-h1 headline-h2 dixel-services-page-title">{{ module.title }}</h2>
+        </div>
+        <div class="dixel-services-page-tab-menu">
+            {% for item in module.field_group %}
+              <div data-tab-id="{{ loop.index }}" class="dixel-services-page-tab-menu__item {% if loop.first %}dixel-services-page-tab-menu__item_active{% endif %}">{{ item.category_title }}</div>
+            {% endfor %}
+        </div>
+      
+        {% for item in module.field_group %}
+          <div class="dixel-services-page-content {% if loop.first %}dixel-services-page-content_active{% endif %}" id="tab-{{ loop.index }}">
+              <div class="dixel-services-page-info">
+                  <div class="dixel-services-page-info__title">{{ item.block.block_title }}</div>
+                  <div class="dixel-services-page-info__text mobile-body-2 body-3">{{ item.block.block_text }}</div>
+                  <a href="/" class="button-primery mobile-size-s size-m dixel-services-page-info__cta">{{ item.block.button.button_text }}</a>
+              </div>
+                {% if item.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% if item.image_field.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% elif item.image_field.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-services-page-pic">
+              {% endif %}
+          </div>
+        {% endfor %}
+        
+    </div>
+</section>

@@ -1,0 +1,22 @@
+[ {
+  "id" : "93741c66-2b95-9aba-e3b5-3cc78bb31b88",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Get a <strong>Free Estimate</strong> Today!"
+}, {
+  "id" : "04e6f5a8-a4ad-3679-5c1a-8c6d306f5358",
+  "name" : "text_field",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Check some of our stories!"
+} ]

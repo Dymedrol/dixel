@@ -1,0 +1,132 @@
+[ {
+  "id" : "2f8f193b-9818-b796-5caa-cd980eee03c5",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Our services in the DMV area <strong>􁘲</strong>"
+}, {
+  "id" : "2f055761-5f1c-7da1-ec0c-3da3aac4ab66",
+  "name" : "field_group",
+  "label" : "Category",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "2d663985-f36a-3ddf-03f6-8e19ab597b70",
+    "name" : "category_title",
+    "label" : "Category title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "d0c18e65-daf0-2b49-2719-1cfa7323666c",
+    "name" : "block",
+    "label" : "Block",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1732e50f-d712-d74b-baab-338521dd6c0a",
+      "name" : "block_title",
+      "label" : "Block title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "title"
+    }, {
+      "id" : "ceebe2e3-47f2-a4f8-c104-164f590f1e29",
+      "name" : "block_text",
+      "label" : "Block text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "text"
+    }, {
+      "id" : "4ad2a65d-581c-5378-0df4-bda793c221cc",
+      "name" : "button",
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "07117c2f-481f-303a-b748-4056a425321a",
+        "name" : "button_text",
+        "label" : "Button text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Get quote"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_text" : "Get quote"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "block_title" : "title",
+      "block_text" : "text",
+      "button" : {
+        "button_text" : "Get quote"
+      }
+    }
+  }, {
+    "id" : "4c84bceb-043d-cb8c-314c-3013daa1661c",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

@@ -150,4 +150,14 @@ $(document).ready(function() {
         module.find('.dixel-our-cases-cards').removeClass('dixel-our-cases-cards__open');
         module.find(`#tab-${tabIndex}`).addClass('dixel-our-cases-cards__open');
     });
+
+    // our services page
+    $('.dixel-services-page-tab-menu__item').click(function () {
+        const module = $(this).closest('.dixel-services-page');
+        const tabIndex = $(this).attr('data-tab-id');
+        module.find('.dixel-services-page-tab-menu__item').removeClass('dixel-services-page-tab-menu__item_active');
+        $(this).addClass('dixel-services-page-tab-menu__item_active');
+        module.find('.dixel-services-page-content').removeClass('dixel-services-page-content_active');
+        module.find(`#tab-${tabIndex}`).addClass('dixel-services-page-content_active');
+    });
 });

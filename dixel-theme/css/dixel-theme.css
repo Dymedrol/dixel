@@ -3923,8 +3923,13 @@ body {
 
 .dixel-services-page-content {
     display: flex;
+    display: none;
     flex-direction: column;
     gap: 12px
+}
+
+.dixel-services-page-content_active {
+    display: flex;
 }
 
 @media((min-width: 1280px)) {
@@ -4175,11 +4180,11 @@ body {
     color: #ec5532
 }
 
-.dixel-contact-us__title strong {
-    font-family: "SF Pro";
-    font-style: normal;
-    font-weight: 400
-}
+/*.dixel-contact-us__title strong {*/
+/*    font-family: "SF Pro";*/
+/*    font-style: normal;*/
+/*    font-weight: 400*/
+/*}*/
 
 .dixel-contact-us__text {
     color: #fff;
