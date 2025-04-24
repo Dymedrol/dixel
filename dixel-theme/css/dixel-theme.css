@@ -4425,6 +4425,7 @@ body {
 }
 
 .dixel-blogs-page-card {
+    display: block;
     width: 343px;
     flex-shrink: 0
 }
