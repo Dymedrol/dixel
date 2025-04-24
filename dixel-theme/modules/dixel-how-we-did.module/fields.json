@@ -1,0 +1,113 @@
+[ {
+  "id" : "80031662-43b6-60be-9f92-9852425bc32d",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Want to know how we did it?"
+}, {
+  "id" : "b8289115-c4b4-09ad-82fe-3393b3bb5efa",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Check some of our stories!"
+}, {
+  "id" : "46da50ce-4e07-6244-2e72-9d05f50c9e6f",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "487a6c4c-3716-12d9-1245-e6043a4a85fc",
+    "name" : "url_field",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "852176a8-28d1-1b79-7246-62cabfc0083f",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "See Our Work!"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "text_field" : "See Our Work!"
+  }
+}, {
+  "id" : "1851f818-877b-05b1-28b7-f5c93240a816",
+  "name" : "image_1",
+  "label" : "Image 1",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/i-phone-15-pro-portrait-mockup-label0.png",
+    "alt" : "i-phone-15-pro-portrait-mockup-label0",
+    "loading" : "lazy",
+    "width" : 238,
+    "height" : 511,
+    "max_width" : 238,
+    "max_height" : 511
+  }
+}, {
+  "id" : "cfc53643-80cc-9f3f-92b0-a21ab1178689",
+  "name" : "image_2",
+  "label" : "Image 2",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/i-phone-15-pro-portrait-mockup-label0.png",
+    "alt" : "i-phone-15-pro-portrait-mockup-label0",
+    "loading" : "lazy",
+    "width" : 238,
+    "height" : 511,
+    "max_width" : 238,
+    "max_height" : 511
+  }
+} ]

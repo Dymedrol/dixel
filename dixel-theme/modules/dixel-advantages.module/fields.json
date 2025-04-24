@@ -6,7 +6,7 @@
   "locked" : false,
   "type" : "richtext",
   "display_width" : null,
-  "default" : "Our advantages <strong>􀬓</strong>"
+  "default" : "Our advantages 􀬓"
 }, {
   "id" : "7d518352-031b-803a-0725-d8498f033605",
   "name" : "card",

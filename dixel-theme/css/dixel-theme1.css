@@ -139,14 +139,12 @@ a {
     font-display: swap
 }
 
-@font-face {
-    font-family: "SF Pro";
-    src: url('https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/fonts/._dixel.ttf')  format('truetype'),
-         url('https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/fonts/._dixel.woff2')  format('truetype'),
-         url('https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/fonts/dixel.woff')  format('woff');
-    font-style: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: "SF Pro";*/
+/*    src: url('fonts/SF-Pro.ttf')  format('truetype');*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 .headline-h1 {
     font-family: DOSS;
@@ -289,8 +287,7 @@ body {
 .dixel-main {
     background-color: #fff;
     border-radius: 0px 0px 32px 32px;
-    padding-top: 105px;
-    overflow: hidden;
+    padding-top: 105px
 }
 
 @media((min-width: 720px)) {
@@ -519,10 +516,6 @@ body {
 .button-circle-secondary.size-m {
     width: 48px;
     height: 48px
-}
-
-.button-circle-secondary.reverse svg {
-    transform: rotate(180deg)
 }
 
 @media((min-width: 720px)) {
@@ -1055,7 +1048,7 @@ body {
 
 .dixel-jumbo {
     position: relative;
-    height: calc(100vh - 20px);
+    height: 100vh
 }
 
 .dixel-jumbo-inner {
@@ -1248,12 +1241,13 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
+    overflow: hidden;
 }
 
 @media((min-width: 720px)) {
 .dixel-our-services__container {
     width: 590px;
-    padding: 0;
+    padding: 0
 }
 }
 
@@ -1280,10 +1274,6 @@ body {
     font-family: "SF Pro";
     font-style: normal;
     font-weight: 400
-}
-
-.dixel-our-services-swiper {
-    overflow: visible;
 }
 
 .dixel-our-services-content {
@@ -1330,7 +1320,7 @@ body {
 
 @media((min-width: 720px)) {
 .dixel-our-services-card {
-    margin-right: 0 !important;
+    margin-right: 0;
 }
 }
 
@@ -1723,8 +1713,6 @@ body {
 .dixel-cases-card {
     position: relative;
     margin-right: 20px;
-    width: fit-content;
-    height: fit-content;
 }
 
 .dixel-cases-card-inner {
@@ -1786,18 +1774,6 @@ body {
     right: 0
 }
 
-.dixel-cases-arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 24px;
-}
-
-@media((min-width: 1280px)) {
-.dixel-cases-arrows {
-    display: none;
-}
-}
-
 .dixel-advantages {
     padding-top: 40px;
     padding-bottom: 40px
@@ -1810,8 +1786,16 @@ body {
 }
 }
 
-.dixel-advantages .swiper {
-    overflow: visible;
+.dixel-advantages .slick-track {
+    display: flex !important;
+}
+
+.dixel-advantages .slick-slide {
+    height: inherit !important;
+}
+
+.dixel-advantages .slick-list {
+    overflow: visible !important;
 }
 
 .dixel-advantages__title {
@@ -1876,7 +1860,23 @@ body {
 @media((min-width: 1280px)) {
 .dixel-advantages-card {
     flex-grow: 1;
-    margin-right: 0 !important;
+    margin-right: 0;
+}
+}
+
+.dixel-advantages-card:first-child {
+    margin-left: 16px
+}
+
+@media((min-width: 720px)) {
+.dixel-advantages-card:first-child {
+    margin-left: 40px
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-advantages-card:first-child {
+    margin-left: 0
 }
 }
 
@@ -1955,53 +1955,52 @@ body {
 
 .dixel-client-say-cards-wrapper {
     position: relative;
+    overflow: hidden;
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 32px;
+    padding: 40px;
 }
 
 @media((min-width: 720px)) {
-.dixel-client-say-cards-wrapper {
-    margin-bottom: 64px;
+.dixel-client-say-cards-wrapper .slick-list {
+    overflow: visible !important;
 }
 }
 
-.dixel-client-say-cards-wrapper .swiper {
-    overflow: visible;
-}
+
 
 .dixel-client-say-cards {
     display: flex;
     justify-content: center;
     width: 343px;
-    height: auto;
     margin: 0 auto;
+}
+
+.dixel-client-say-cards .slick-list {
+
 }
 
 @media((min-width: 720px)) {
 .dixel-client-say-cards {
-    width: 520px;
+    width: 600px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-client-say-cards {
+    width: 680px;
 }
 }
 
 .dixel-client-say-card {
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 343px;
-    min-height: 343px;
     padding: 20px;
     border-radius: 24px;
     background: #fff;
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, .05), -4px -4px 40px 0px rgba(0, 0, 0, .05)
-}
 
-.dixel-client-say-card.swiper-slide {
-    opacity: 0 !important;
-}
-
-.dixel-client-say-card.swiper-slide-active {
-    opacity: 1 !important;
 }
 
 @media((min-width: 720px)) {
@@ -2023,8 +2022,8 @@ body {
 
 @media((min-width: 720px)) {
 .dixel-client-say-card {
-    width: 520px;
-    min-height: 328px;
+    margin: 0 80px;
+    width: 600px;
     padding: 40px;
     box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, .05), -4px -4px 40px 0px rgba(0, 0, 0, .05);
 }
@@ -2054,8 +2053,7 @@ body {
 .dixel-client-say-card-user__avatar {
     width: 54px;
     height: 54px;
-    object-fit: cover;
-    flex-shrink: 0;
+    object-fit: cover
 }
 
 @media((min-width: 720px)) {
@@ -2087,7 +2085,6 @@ body {
 }
 
 .dixel-client-say-card__footer {
-    margin-top: auto;
     display: flex;
     gap: 6px;
     align-items: center
@@ -2113,10 +2110,10 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -120px;
+    left: 0;
     right: 0;
     margin: auto;
-    width: 760px;
+    width: 640px;
     height: fit-content;
     padding: 0 40px;
 }
@@ -2124,8 +2121,7 @@ body {
 
 @media((min-width: 1280px)) {
 .dixel-client-say-arrows {
-    width: 840px;
-    left: -160px;
+    width: 800px;
 }
 }
 
@@ -2287,24 +2283,6 @@ body {
     right: 0
 }
 
-.dixel-blog-arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 24px;
-}
-
-@media((min-width: 720px)) {
-.dixel-blog-arrows {
-    margin-top: 40px;
-}
-}
-
-@media((min-width: 1280px)) {
-.dixel-blog-arrows {
-    display: none;
-}
-}
-
 .dixel-our-cases {
     padding-top: 20px;
     padding-bottom: 20px
@@ -2409,15 +2387,10 @@ body {
 
 .dixel-our-cases-cards {
     display: flex;
-    display: none;
     flex-direction: column;
     align-items: center;
     gap: 24px;
     margin-bottom: 24px
-}
-
-.dixel-our-cases-cards__open {
-    display: flex;
 }
 
 @media((min-width: 720px)) {

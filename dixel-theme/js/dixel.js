@@ -140,4 +140,14 @@ $(document).ready(function() {
             },
         }
     });
+
+    // our cases page
+    $('.dixel-our-cases-tab-menu__item').click(function () {
+        const module = $(this).closest('.dixel-our-cases');
+        const tabIndex = $(this).attr('data-tab-id');
+        module.find('.dixel-our-cases-tab-menu__item').removeClass('dixel-our-cases-tab-menu__item_active');
+        $(this).addClass('dixel-our-cases-tab-menu__item_active');
+        module.find('.dixel-our-cases-cards').removeClass('dixel-our-cases-cards__open');
+        module.find(`#tab-${tabIndex}`).addClass('dixel-our-cases-cards__open');
+    });
 });

@@ -1,7 +1,7 @@
 <section class="dixel-blog-module">
     <div class="container">
         <div class="dixel-blog-module-header">
-          <h2 class="mobile-headline-h2 headline-h3 dixel-blog-module__title">Blog <span>􁕝</span></h2>
+          <h2 class="mobile-headline-h2 headline-h3 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h2>
           <a href="{{ module.button.button_url.href|escape_url }}" class="button-secondary size-s  dixel-blog-module__button">{{ module.button.button_text }}</a>
         </div>
     </div>

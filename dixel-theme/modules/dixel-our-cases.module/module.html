@@ -1,0 +1,95 @@
+<section class="dixel-our-cases">
+    <div class="container">
+        <h2 class="mobile-headline-h2 headline-h3 dixel-our-cases-title">{{ module.title }}</h2>
+    </div>
+    <div class="dixel-our-cases-tab-menu">
+        <div class="dixel-our-cases-tab-menu__item dixel-our-cases-tab-menu__item_active" data-tab-id="0">All</div>
+        {% for item in module.category %}
+          <div class="dixel-our-cases-tab-menu__item" data-tab-id="{{ loop.index }}">{{ item.category_title }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="dixel-our-cases-cards dixel-our-cases-cards__open" id="tab-0">
+      {% for item in module.category %}
+          {% for item2 in item.card %}
+            <a href="{{ item2.card_url.href|escape_url }}" class="dixel-our-cases-card">
+              <div class="dixel-our-cases-card-wrapper">
+                  <div class="dixel-our-cases-card-inner">
+                    {% if item2.card_image.src %}
+                        {% set sizeAttrs = 'width="{{ item2.card_image.width|escape_attr }}" height="{{ item2.card_image.height|escape_attr }}"' %}
+                        {% if item2.card_image.size_type == 'auto' %}
+                            {% set sizeAttrs = 'width="{{ item2.card_image.width|escape_attr }}" height="{{ item2.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.card_image.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ item2.card_image.max_width|escape_attr }}" height="{{ item2.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                         {% set loadingAttr = item2.card_image.loading != 'disabled' ? 'loading="{{ item2.card_image.loading|escape_attr }}"' : '' %}
+                        <img src="{{ item2.card_image.src|escape_url }}" alt="{{ item2.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-our-cases-card__pic">
+                    {% endif %}
+                  </div>
+                  <div class="button-circle-primery dixel-our-cases-card__button size-m">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </div>
+              </div>
+              <div class="mobile-headline-h3 headline-h3 dixel-our-cases-card__title">{{ item2.card_title }}</div>
+              <div class="dixel-our-cases-card-info">
+                  <div class="mobile-body-2 body-2 dixel-our-cases-card-info__adres">{{ item2.card_adress }}</div>
+              </div>
+          </a>
+          {% endfor %}
+      {% endfor %}
+    </div>
+
+    {% for item in module.category %}
+      <div class="dixel-our-cases-cards" id="tab-{{ loop.index }}">
+        {% for item2 in item.card %}
+          <a href="{{ item2.card_url.href|escape_url }}" class="dixel-our-cases-card">
+            <div class="dixel-our-cases-card-wrapper">
+                <div class="dixel-our-cases-card-inner">
+                  {% if item2.card_image.src %}
+                      {% set sizeAttrs = 'width="{{ item2.card_image.width|escape_attr }}" height="{{ item2.card_image.height|escape_attr }}"' %}
+                      {% if item2.card_image.size_type == 'auto' %}
+                          {% set sizeAttrs = 'width="{{ item2.card_image.width|escape_attr }}" height="{{ item2.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item2.card_image.size_type == 'auto_custom_max' %}
+                          {% set sizeAttrs = 'width="{{ item2.card_image.max_width|escape_attr }}" height="{{ item2.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                       {% set loadingAttr = item2.card_image.loading != 'disabled' ? 'loading="{{ item2.card_image.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item2.card_image.src|escape_url }}" alt="{{ item2.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-our-cases-card__pic">
+                  {% endif %}
+                </div>
+                <div class="button-circle-primery dixel-our-cases-card__button size-m">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="mobile-headline-h3 headline-h3 dixel-our-cases-card__title">{{ item2.card_title }}</div>
+            <div class="dixel-our-cases-card-info">
+                <div class="mobile-body-2 body-2 dixel-our-cases-card-info__adres">{{ item2.card_adress }}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+<!--    <div class="dixel-our-cases-pagintation">-->
+<!--        <div class="button-circle-secondary size-m reverse">-->
+<!--            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--            </svg>-->
+<!--        </div>-->
+<!--        <div class="dixel-our-cases-pagintation-digits">-->
+<!--            <div class="dixel-our-cases-pagintation-digits__item dixel-our-cases-pagintation-digits__item__active">1</div>-->
+<!--            <div class="dixel-our-cases-pagintation-digits__item">2</div>-->
+<!--            <div class="dixel-our-cases-pagintation-digits__item">3</div>-->
+<!--            <div class="dixel-our-cases-pagintation-digits__item">4</div>-->
+<!--            <div class="dixel-our-cases-pagintation-digits__item">...</div>-->
+<!--        </div>-->
+<!--        <div class="button-circle-secondary size-m">-->
+<!--            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--            </svg>-->
+<!--        </div>-->
+<!--    </div>-->
+</section>

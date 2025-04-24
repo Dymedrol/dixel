@@ -1,0 +1,41 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 189285006112,
+  "other_assets" : [ {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/shadow0.png",
+    "autoload" : false,
+    "name" : "shadow0.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/main0.png",
+    "autoload" : false,
+    "name" : "main0.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/i-phone-15-pro-portrait-mockup-label0.png",
+    "autoload" : false,
+    "name" : "i-phone-15-pro-portrait-mockup-label0.png"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/mask-group0.svg",
+    "autoload" : false,
+    "name" : "mask-group0.svg"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/battery0.svg",
+    "autoload" : false,
+    "name" : "battery0.svg"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/wifi0.svg",
+    "autoload" : false,
+    "name" : "wifi0.svg"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/cellular-connection0.svg",
+    "autoload" : false,
+    "name" : "cellular-connection0.svg"
+  }, {
+    "url" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/character.svg",
+    "autoload" : false,
+    "name" : "character.svg"
+  } ],
+  "label" : "Dixel how we did it",
+  "is_available_for_new_content" : true
+}
