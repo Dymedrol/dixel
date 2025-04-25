@@ -1,0 +1,32 @@
+<section class="dixel-about-us">
+    <div class="container">
+        <div class="dixel-about-us-wrapper">
+            <div class="dixel-about-info">
+                {% for item in module.accordion %}
+                  <div class="dixel-about-info__item {% if loop.first %}open{% endif %}">
+                      <div class="dixel-about-info__item-header">
+                          <div class="headline-h5 dixel-about-info__item-header-title">{{ item.title }}</div>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                              <path d="M15 1L8 7L1 1" stroke="white" stroke-width="1.8"/>
+                          </svg>
+                      </div>
+                      <div class="dixel-about-info__item-details body-3">{{ item.text_field }}</div>
+                  </div>
+                {% endfor %}
+                <a href="{{ module.button.url_field }}" class="button-primery mobile-size-s size-m dixel-about-info-button">{{ module.button.text_field_1 }}</a>
+            </div>
+            <div class="dixel-about-us-pic-wrapper">
+                {% if module.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+                  {% if module.image_field.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+                  {% elif module.image_field.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.image_field.max_width|escape_attr }}" height="{{ module.image_field.max_height|escape_attr }}"' %}
+                  {% endif %}
+                   {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-about-us-pic">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

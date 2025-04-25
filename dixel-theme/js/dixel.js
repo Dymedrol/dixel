@@ -162,7 +162,6 @@ $(document).ready(function() {
     });
 
     // our services slider swiper
-
     var casesSwiper = new Swiper(".dixel-our-services-slider-swiper", {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -170,5 +169,21 @@ $(document).ready(function() {
             nextEl: ".dixel-our-services-slider-button-next",
             prevEl: ".dixel-our-services-slider-button-prev",
         },
+    });
+
+    // accordion
+    $(".accordion-header").on("click", function(e) {
+        e.preventDefault();
+        var $this = $(this);
+
+        if (!$this.hasClass("accordion-active")) {
+            $(".accordion-content").slideUp(400);
+            $(".accordion__title").removeClass("accordion-active");
+            $('.accordion__arrow').removeClass('accordion__rotate');
+        }
+
+        $this.toggleClass("accordion-active");
+        $this.next().slideToggle();
+        $('.accordion__arrow',this).toggleClass('accordion__rotate');
     });
 });
