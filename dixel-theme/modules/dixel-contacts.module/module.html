@@ -1,0 +1,34 @@
+    <section class="dixel-contacts">
+        <div class="container">
+            <div class="dixel-contacts__wrapper">
+                <div class="dixel-contacts-info">
+                    <h2 class="mobile-headline-h2 headline-h2 dixel-contacts__title">{{ module.title }}</h2>
+                    <div class="dixel-contacts-info-block">
+                        <div class="dixel-contacts-info-block-item">
+                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">Just give us a call</div>
+                            <a href="tel:{{ module.phone.url_field.href }}" class="mobile-headline-h3 headline-h4 dixel-contacts-info-block-item__link">{{ module.phone.phone_text }}</a>
+                        </div>
+                        <div class="dixel-contacts-info-block-item">
+                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">email</div>
+                            {% set href = module.email.url.href %}
+                            <a href="mailto:{{ href }}" class="mobile-headline-h3 headline-h4 dixel-contacts-info-block-item__link">{{ href }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dixel-contacts-foto-wrapper">
+                    {% if module.image_field.src %}
+                      {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+                      {% if module.image_field.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+                      {% elif module.image_field.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ module.image_field.max_width|escape_attr }}" height="{{ module.image_field.max_height|escape_attr }}"' %}
+                      {% endif %}
+                       {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading|escape_attr }}"' : '' %}
+                      <img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-contacts-foto">
+                    {% endif %}
+                    <div class="mobile-body-2 body-2 dixel-contacts-foto-adress-title">Address</div>
+                    <div class="mobile-body-2 body-2 dixel-contacts-foto-adress-text">{{ module.adress }}</div>
+                </div>
+            </div>
+        </div>
+    </section>

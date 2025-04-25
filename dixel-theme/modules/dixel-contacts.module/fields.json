@@ -1,0 +1,108 @@
+[ {
+  "id" : "6521dc6d-29c5-b175-ca22-f62e08581a6d",
+  "name" : "title",
+  "label" : "title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Contacts <strong>􁋭</strong>"
+}, {
+  "id" : "cecc521d-ccc5-40a9-f86a-bcaae3601675",
+  "name" : "phone",
+  "label" : "Phone",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "aaaf4fce-03ff-de49-a8f6-c7962b607da7",
+    "name" : "phone_text",
+    "label" : "Phone text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "+ (571) 447-1166"
+  }, {
+    "id" : "65152012-3eb4-90e7-03da-f2fc10315f1d",
+    "name" : "url_field",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "PHONE_NUMBER" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "+15714471166",
+      "type" : "PHONE_NUMBER"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "phone_text" : "+ (571) 447-1166",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "+15714471166",
+      "type" : "PHONE_NUMBER"
+    }
+  }
+}, {
+  "id" : "ac11e1fc-e921-c30f-b6a2-5b3b192582f4",
+  "name" : "adress",
+  "label" : "adress",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "12907 Crookston Lane, Rockville, Maryland, 20851"
+}, {
+  "id" : "f027be09-8dad-025d-901e-4f0da0cba17a",
+  "name" : "email",
+  "label" : "email",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "contact@dixelmail.com",
+      "type" : "EMAIL_ADDRESS"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "e34e0f92-3560-9b4f-2dde-d5b8a396ae96",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/contact-pic.png",
+    "alt" : "contact-pic",
+    "loading" : "lazy",
+    "width" : 4032,
+    "height" : 3024,
+    "max_width" : 2000,
+    "max_height" : 1500
+  }
+} ]

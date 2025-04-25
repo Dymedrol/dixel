@@ -160,4 +160,15 @@ $(document).ready(function() {
         module.find('.dixel-services-page-content').removeClass('dixel-services-page-content_active');
         module.find(`#tab-${tabIndex}`).addClass('dixel-services-page-content_active');
     });
+
+    // our services slider swiper
+
+    var casesSwiper = new Swiper(".dixel-our-services-slider-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".dixel-our-services-slider-button-next",
+            prevEl: ".dixel-our-services-slider-button-prev",
+        },
+    });
 });

@@ -1,0 +1,134 @@
+[ {
+  "id" : "304b030a-bf54-30ae-4261-8e6b7dafefa1",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Our Services in <span><strong>􁘮</strong> DMV area</span>"
+}, {
+  "id" : "5156c486-eca0-f257-0046-ff064a918b35",
+  "name" : "Card",
+  "label" : "Field group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "ca5653cd-336a-b6f4-979c-781ac80d4b41",
+    "name" : "card_title",
+    "label" : "Card title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "56fc648c-bbcf-7762-549f-d055d9b5b6df",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "c740c37f-8701-aece-edd8-0c81589ac41d",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  }, {
+    "id" : "83b3a447-7e80-1e6b-4f16-86c66467ee48",
+    "name" : "url_field",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "5d45e382-ec85-884f-92b7-87da1866855b",
+  "name" : "button",
+  "label" : "button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d4b3bca7-9f1d-ec1c-c87f-58672c9abada",
+    "name" : "button_text",
+    "label" : "button text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Get quote"
+  }, {
+    "id" : "3507ed81-3ed4-6030-1c3f-e5ce29e756e7",
+    "name" : "url_field_1",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_text" : "Get quote",
+    "url_field_1" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+} ]
