@@ -1,0 +1,33 @@
+[ {
+  "id" : "60cd598f-9d99-b556-5e12-ef3bc16757a0",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "title"
+}, {
+  "id" : "fd45c40f-3dc7-005c-b9b5-4c34ad7fb9df",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "7bdec2fc-e1fa-d0d5-1172-74ed4f65abd2",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "content"
+} ]

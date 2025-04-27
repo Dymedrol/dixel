@@ -1,0 +1,76 @@
+[ {
+  "id" : "e0469617-a66b-1170-3b96-ef638fad1210",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Team <strong>􀻸</strong>"
+}, {
+  "id" : "4820ab5e-885e-6a9e-5be8-1df388e33f73",
+  "name" : "card",
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "71cdf563-032b-d5fe-0bb9-e7eb00a57985",
+    "name" : "card_name",
+    "label" : "Card name",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "8f6d03f6-85a3-2422-99d0-1c2c3e1c3729",
+    "name" : "job",
+    "label" : "job",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "e07e30c6-d797-576e-9bdb-b6e78acc393a",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "card_name" : "text",
+    "job" : "text",
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+} ]

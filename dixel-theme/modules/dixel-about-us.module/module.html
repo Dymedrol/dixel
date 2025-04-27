@@ -3,14 +3,14 @@
         <div class="dixel-about-us-wrapper">
             <div class="dixel-about-info">
                 {% for item in module.accordion %}
-                  <div class="dixel-about-info__item {% if loop.first %}open{% endif %}">
-                      <div class="dixel-about-info__item-header">
+                  <div class="dixel-about-info__item">
+                      <div class="dixel-about-info__item-header accordion-header">
                           <div class="headline-h5 dixel-about-info__item-header-title">{{ item.title }}</div>
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                               <path d="M15 1L8 7L1 1" stroke="white" stroke-width="1.8"/>
                           </svg>
                       </div>
-                      <div class="dixel-about-info__item-details body-3">{{ item.text_field }}</div>
+                      <div class="dixel-about-info__item-details body-3 accordion-content">{{ item.text_field }}</div>
                   </div>
                 {% endfor %}
                 <a href="{{ module.button.url_field }}" class="button-primery mobile-size-s size-m dixel-about-info-button">{{ module.button.text_field_1 }}</a>

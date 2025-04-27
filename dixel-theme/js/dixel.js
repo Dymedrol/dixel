@@ -186,4 +186,17 @@ $(document).ready(function() {
         $this.next().slideToggle();
         $('.accordion__arrow',this).toggleClass('accordion__rotate');
     });
+
+    // case page
+    $('.beforeAfter').beforeAfter();
+
+    $('.dixel-case-page-tab-menu__item').click(function () {
+        const module = $(this).closest('.dixel-case-page');
+        const tabIndex = $(this).attr('data-tab-id');
+        module.find('.dixel-case-page-tab-menu__item').removeClass('dixel-case-page-tab-menu__item_active');
+        $(this).addClass('dixel-case-page-tab-menu__item_active');
+        module.find('.dixel-case-page-step').removeClass('open');
+        module.find(`#tab-${tabIndex}`).addClass('open');
+    });
+
 });

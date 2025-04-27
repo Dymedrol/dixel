@@ -1,0 +1,21 @@
+    <section class="dixel-team">
+        <h2 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h2>
+        <div class="dixel-team-wrapper">
+          {% for item in module.card %}
+            <div class="dixel-team-card">
+                <div class="headline-h4 dixel-team-card__title">{{ item.card_name }}</div>
+                <div class="body-2 dixel-team-card__job">{{ item.job }}</div>
+                {% if item.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% if item.image_field.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% elif item.image_field.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-team-card__foto">
+                {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+    </section>

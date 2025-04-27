@@ -1,0 +1,438 @@
+[ {
+  "id" : "8cc97dec-7f69-f4f7-140b-dd2f79e1efe3",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Case title <strong>􁘲</strong>"
+}, {
+  "id" : "04e09a4a-6d62-4f6c-4b7b-258bbb8484cf",
+  "name" : "tag",
+  "label" : "tag",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "text "
+}, {
+  "id" : "eaeb7f15-32df-c411-7ceb-e47ca9387815",
+  "name" : "tag_adress",
+  "label" : "tag adress",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "adress"
+}, {
+  "id" : "3f6f849e-fdc9-c50a-43c1-6801f4b2529b",
+  "name" : "info_bar",
+  "label" : "Info bar",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7624513b-04de-75b1-7b00-f783ce780841",
+    "name" : "location",
+    "label" : "Location",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "location "
+  }, {
+    "id" : "cc225dba-f89f-6267-0e75-8848a95a0bec",
+    "name" : "size",
+    "label" : "Size",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "size"
+  }, {
+    "id" : "13ef2085-da6b-309b-bccc-16baa06446f5",
+    "name" : "completion_time",
+    "label" : "Completion time",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "time"
+  }, {
+    "id" : "49502a43-7307-b21f-28a0-f258fb88976a",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Price"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "location" : "location ",
+    "size" : "size",
+    "completion_time" : "time",
+    "price" : "Price"
+  }
+}, {
+  "id" : "29c56f32-d7d6-e2be-bb23-e1acde59d469",
+  "name" : "about",
+  "label" : "About",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8c998996-29a9-f186-45b7-3e235387efe5",
+    "name" : "accordion",
+    "label" : "Accordion",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "2a073dd1-aae4-5fd7-03f2-961ced4212d3",
+      "name" : "accordion_item",
+      "label" : "accordion item",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "44d01cd1-303d-abfb-8a80-4ef80b7672b8",
+        "name" : "accordion_title",
+        "label" : "Accordion title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Title"
+      }, {
+        "id" : "12b92a17-e871-5a4b-d6d6-c23cfedc7cfd",
+        "name" : "text_field",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "text"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "accordion_item" : [ ]
+    }
+  }, {
+    "id" : "1051a519-00f7-9cdf-1893-088cf77d45c2",
+    "name" : "image_before",
+    "label" : "Image before",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  }, {
+    "id" : "fbfb0d1e-810d-399c-59e5-422a6aa5dbf3",
+    "name" : "image_after",
+    "label" : "Image after",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "accordion" : {
+      "accordion_item" : [ ]
+    },
+    "image_before" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    },
+    "image_after" : {
+      "size_type" : "auto",
+      "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+      "alt" : "grayscale-mountain",
+      "loading" : "lazy",
+      "width" : 605,
+      "height" : 451,
+      "max_width" : 605,
+      "max_height" : 451
+    }
+  }
+}, {
+  "id" : "b3eb9953-141e-17c1-ce02-fe5b1bab2b4f",
+  "name" : "step",
+  "label" : "Step",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "5a03b57a-e999-a66b-403a-26b347fd0ad4",
+    "name" : "step_title",
+    "label" : "Step title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "step title "
+  }, {
+    "id" : "ae902e5a-c6ef-73f7-946a-b43b73f597c4",
+    "name" : "card",
+    "label" : "card",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 6,
+      "max" : 6,
+      "sorting_label_field" : null,
+      "default" : 6
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "e984c239-7b55-66bf-2fa3-c9ecd593f532",
+      "name" : "card_type",
+      "label" : "card type",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "text", "Text card" ], [ "image", "Image card" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "text"
+    }, {
+      "id" : "ca78c8a5-5afc-6bad-4cc8-0c3fdff22fc1",
+      "name" : "card_title",
+      "label" : "card title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "card title"
+    }, {
+      "id" : "662903df-05e5-d61f-4bf3-a93732bc7842",
+      "name" : "text_field_1",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "text"
+    }, {
+      "id" : "87f8a8ad-a17b-4192-00f5-bf92538f5be8",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    }, {
+      "card_type" : "text",
+      "card_title" : "card title",
+      "text_field_1" : "text",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://47572712.fs1.hubspotusercontent-na1.net/hubfs/47572712/grayscale-mountain.webp",
+        "alt" : "grayscale-mountain",
+        "loading" : "lazy",
+        "width" : 605,
+        "height" : 451,
+        "max_width" : 605,
+        "max_height" : 451
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

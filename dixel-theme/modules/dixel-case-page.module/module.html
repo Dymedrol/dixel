@@ -1,0 +1,143 @@
+    <section class="dixel-case-page">
+        <div class="container">
+            <div class="dixel-case-page-header">
+                <h1 class="mobile-headline-h1 headline-h2 dixel-case-page-title">{{ module.richtext_field }}</h1>
+                <div class="dixel-case-page-bubbles">
+                    <div class="dixel-case-page-bubble body-2">{{ module.tag }}</div>
+                    <div class="dixel-case-page-bubble body-2">{{ module.tag_adress }}</div>
+                </div>
+            </div>
+            <div class="dixel-case-page-tab-menu">
+                <div class="dixel-case-page-tab-menu__item dixel-case-page-tab-menu__item_active" data-tab-id="0">About</div>
+                {% for item in module.step %}
+                  <div class="dixel-case-page-tab-menu__item" data-tab-id="{{ loop.index }}">{{ item.step_title }}</div>
+                {% endfor %}
+            </div>
+            <div class="dixel-case-page-step open" id="tab-0">
+                <div class="dixel-case-page-step-about">
+                    <div class="dixel-case-page-step-about-info">
+                      {% for item in module.about.accordion.accordion_item %}
+                          <div class="dixel-case-page-step-about-info__item">
+                              <div class="dixel-case-page-step-about-info__item-header accordion-header">
+                                  <div class="headline-h5 dixel-case-page-step-about-info__item-header-title">{{ item.accordion_title }}</div>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                                      <path d="M15 1L8 7L1 1" stroke="white" stroke-width="1.8"/>
+                                  </svg>
+                              </div>
+                              <div class="dixel-case-page-step-about-info__item-details body-3 accordion-content">{{ item.text_field }}</div>
+                          </div>
+                      {% endfor %}
+                    </div>
+                    <div class="dixel-case-page-step-about-compare beforeAfter">
+                        {% if module.about.image_before.src %}
+                          {% set sizeAttrs = 'width="{{ module.about.image_before.width|escape_attr }}" height="{{ module.about.image_before.height|escape_attr }}"' %}
+                          {% if module.about.image_before.size_type == 'auto' %}
+                            {% set sizeAttrs = 'width="{{ module.about.image_before.width|escape_attr }}" height="{{ module.about.image_before.height|escape_attr }}" ' %}
+                          {% elif module.about.image_before.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ module.about.image_before.max_width|escape_attr }}" height="{{ module.about.image_before.max_height|escape_attr }}"' %}
+                          {% endif %}
+                           {% set loadingAttr = module.about.image_before.loading != 'disabled' ? 'loading="{{ module.about.image_before.loading|escape_attr }}"' : '' %}
+                          <img src="{{ module.about.image_before.src|escape_url }}" alt="{{ module.about.image_before.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-step-about-compare__before">
+                        {% endif %}
+                        {% if module.about.image_after.src %}
+                          {% set sizeAttrs = 'width="{{ module.about.image_after.width|escape_attr }}" height="{{ module.about.image_after.height|escape_attr }}"' %}
+                          {% if module.about.image_after.size_type == 'auto' %}
+                            {% set sizeAttrs = 'width="{{ module.about.image_after.width|escape_attr }}" height="{{ module.about.image_after.height|escape_attr }}"' %}
+                          {% elif module.about.image_after.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ module.about.image_after.max_width|escape_attr }}" height="{{ module.about.image_after.max_height|escape_attr }}"' %}
+                          {% endif %}
+                           {% set loadingAttr = module.about.image_after.loading != 'disabled' ? 'loading="{{ module.about.image_after.loading|escape_attr }}"' : '' %}
+                          <img src="{{ module.about.image_after.src|escape_url }}" alt="{{ module.about.image_after.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-step-about-compare__after">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% for item in module.step %}
+              <div class="dixel-case-page-step" id="tab-{{ loop.index }}">
+                  <div class="dixel-case-page-step-content">
+                      {% for item2 in item.card %}
+                        {% if item2.card_type == "text" %}
+                          <div class="dixel-case-page-step-content-item dixel-case-page-step-content-item_withtext">
+                              <div class="dixel-case-page-step-content-item__title">{{ item2.card_title }}</div>
+                              <div class="mobile-body-2 body-3 dixel-case-page-step-content-item__text">{{ item2.text_field_1 }}</div>
+                          </div>
+                        {% endif %}
+                        {% if item2.card_type == "image" %}
+                            <div class="dixel-case-page-step-content-item">
+                                {% if item2.image_field.src %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% if item2.image_field.size_type == 'auto' %}
+                                        {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% elif item2.image_field.size_type == 'auto_custom_max' %}
+                                        {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}"' %}
+                                    {% endif %}
+                                     {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+                                    <img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-step-content-item__pic">
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                      {% endfor %}
+                  </div>
+              </div>
+            {% endfor %}
+
+            <div class="dixel-case-page-step-about-bar">
+                <div class="dixel-case-page-step-about-bar-item">
+                    <div class="dixel-case-page-step-about-bar-item__circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 10.5C12.8284 10.5 13.5 9.82843 13.5 9C13.5 8.17157 12.8284 7.5 12 7.5C11.1716 7.5 10.5 8.17157 10.5 9C10.5 9.82843 11.1716 10.5 12 10.5Z" fill="white"/>
+                            <path d="M12 1.5C7.86469 1.5 4.5 4.71797 4.5 8.67188C4.5 10.5548 5.35828 13.0589 7.05094 16.1147C8.41031 18.5681 9.98297 20.7867 10.8009 21.8906C10.9392 22.0792 11.1199 22.2326 11.3284 22.3384C11.537 22.4441 11.7676 22.4992 12.0014 22.4992C12.2352 22.4992 12.4658 22.4441 12.6744 22.3384C12.8829 22.2326 13.0637 22.0792 13.2019 21.8906C14.0184 20.7867 15.5925 18.5681 16.9519 16.1147C18.6417 13.0598 19.5 10.5558 19.5 8.67188C19.5 4.71797 16.1353 1.5 12 1.5ZM12 12C11.4067 12 10.8266 11.8241 10.3333 11.4944C9.83994 11.1648 9.45542 10.6962 9.22836 10.1481C9.0013 9.59987 8.94189 8.99667 9.05764 8.41473C9.1734 7.83279 9.45912 7.29824 9.87868 6.87868C10.2982 6.45912 10.8328 6.1734 11.4147 6.05764C11.9967 5.94189 12.5999 6.0013 13.1481 6.22836C13.6962 6.45542 14.1648 6.83994 14.4944 7.33329C14.8241 7.82664 15 8.40666 15 9C14.9991 9.79538 14.6828 10.5579 14.1204 11.1204C13.5579 11.6828 12.7954 11.9991 12 12Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="dixel-case-page-step-about-bar-item__info">
+                        <div class="dixel-case-page-step-about-bar-item__info-title">Location</div>
+                        <div class="dixel-case-page-step-about-bar-item__info-text">{{ module.info_bar.location }}</div>
+                    </div>
+                </div>
+                <div class="dixel-case-page-step-about-bar-item">
+                    <div class="dixel-case-page-step-about-bar-item__circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5 4.5C13.5 4.08579 13.8358 3.75 14.25 3.75H19.5C19.9142 3.75 20.25 4.08579 20.25 4.5V9.75C20.25 10.1642 19.9142 10.5 19.5 10.5C19.0858 10.5 18.75 10.1642 18.75 9.75V5.25H14.25C13.8358 5.25 13.5 4.91421 13.5 4.5Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5502 4.44779C19.8432 4.74067 19.8432 5.21554 19.5503 5.50845L5.77889 19.2813C5.48601 19.5742 5.01114 19.5742 4.71823 19.2813C4.42532 18.9884 4.4253 18.5136 4.71818 18.2207L18.4896 4.44785C18.7825 4.15494 19.2573 4.15491 19.5502 4.44779Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 13.5C4.91421 13.5 5.25 13.8358 5.25 14.25V18.75H9.75C10.1642 18.75 10.5 19.0858 10.5 19.5C10.5 19.9142 10.1642 20.25 9.75 20.25H4.5C4.08579 20.25 3.75 19.9142 3.75 19.5V14.25C3.75 13.8358 4.08579 13.5 4.5 13.5Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="dixel-case-page-step-about-bar-item__info">
+                        <div class="dixel-case-page-step-about-bar-item__info-title">Size</div>
+                        <div class="dixel-case-page-step-about-bar-item__info-text">{{ module.info_bar.size }}</div>
+                    </div>
+                </div>
+                <div class="dixel-case-page-step-about-bar-item">
+                    <div class="dixel-case-page-step-about-bar-item__circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22.5 6.00005C22.5 5.2044 22.1839 4.44134 21.6213 3.87873C21.0587 3.31612 20.2957 3.00005 19.5 3.00005H18.75V2.27115C18.75 1.86755 18.4397 1.52115 18.0361 1.50099C17.9347 1.49611 17.8333 1.51186 17.7382 1.5473C17.6431 1.58274 17.5561 1.63712 17.4826 1.70716C17.4091 1.77719 17.3506 1.86142 17.3106 1.95474C17.2706 2.04806 17.25 2.14853 17.25 2.25005V3.00005H6.75V2.27115C6.75 1.86755 6.43969 1.52115 6.03609 1.50099C5.93469 1.49611 5.83334 1.51186 5.7382 1.5473C5.64307 1.58274 5.55611 1.63712 5.48261 1.70716C5.40911 1.77719 5.3506 1.86142 5.31062 1.95474C5.27063 2.04806 5.25001 2.14853 5.25 2.25005V3.00005H4.5C3.70435 3.00005 2.94129 3.31612 2.37868 3.87873C1.81607 4.44134 1.5 5.2044 1.5 6.00005V6.56255C1.5 6.61228 1.51975 6.65997 1.55492 6.69514C1.59008 6.7303 1.63777 6.75005 1.6875 6.75005H22.3125C22.3622 6.75005 22.4099 6.7303 22.4451 6.69514C22.4802 6.65997 22.5 6.61228 22.5 6.56255V6.00005Z" fill="white"/>
+                            <path d="M1.5 19.5C1.5 20.2956 1.81607 21.0587 2.37868 21.6213C2.94129 22.1839 3.70435 22.5 4.5 22.5H19.5C20.2957 22.5 21.0587 22.1839 21.6213 21.6213C22.1839 21.0587 22.5 20.2956 22.5 19.5V8.39062C22.5 8.35333 22.4852 8.31756 22.4588 8.29119C22.4324 8.26482 22.3967 8.25 22.3594 8.25H1.64062C1.60333 8.25 1.56756 8.26482 1.54119 8.29119C1.51482 8.31756 1.5 8.35333 1.5 8.39062V19.5ZM17.625 9.75C17.8475 9.75 18.065 9.81598 18.25 9.9396C18.435 10.0632 18.5792 10.2389 18.6644 10.4445C18.7495 10.65 18.7718 10.8762 18.7284 11.0945C18.685 11.3127 18.5778 11.5132 18.4205 11.6705C18.2632 11.8278 18.0627 11.935 17.8445 11.9784C17.6262 12.0218 17.4 11.9995 17.1945 11.9144C16.9889 11.8292 16.8132 11.685 16.6896 11.5C16.566 11.315 16.5 11.0975 16.5 10.875C16.5 10.5766 16.6185 10.2905 16.8295 10.0795C17.0405 9.86853 17.3266 9.75 17.625 9.75ZM17.625 13.5C17.8475 13.5 18.065 13.566 18.25 13.6896C18.435 13.8132 18.5792 13.9889 18.6644 14.1945C18.7495 14.4 18.7718 14.6262 18.7284 14.8445C18.685 15.0627 18.5778 15.2632 18.4205 15.4205C18.2632 15.5778 18.0627 15.685 17.8445 15.7284C17.6262 15.7718 17.4 15.7495 17.1945 15.6644C16.9889 15.5792 16.8132 15.435 16.6896 15.25C16.566 15.065 16.5 14.8475 16.5 14.625C16.5 14.3266 16.6185 14.0405 16.8295 13.8295C17.0405 13.6185 17.3266 13.5 17.625 13.5ZM13.875 9.75C14.0975 9.75 14.315 9.81598 14.5 9.9396C14.685 10.0632 14.8292 10.2389 14.9144 10.4445C14.9995 10.65 15.0218 10.8762 14.9784 11.0945C14.935 11.3127 14.8278 11.5132 14.6705 11.6705C14.5132 11.8278 14.3127 11.935 14.0945 11.9784C13.8762 12.0218 13.65 11.9995 13.4445 11.9144C13.2389 11.8292 13.0632 11.685 12.9396 11.5C12.816 11.315 12.75 11.0975 12.75 10.875C12.75 10.5766 12.8685 10.2905 13.0795 10.0795C13.2905 9.86853 13.5766 9.75 13.875 9.75ZM13.875 13.5C14.0975 13.5 14.315 13.566 14.5 13.6896C14.685 13.8132 14.8292 13.9889 14.9144 14.1945C14.9995 14.4 15.0218 14.6262 14.9784 14.8445C14.935 15.0627 14.8278 15.2632 14.6705 15.4205C14.5132 15.5778 14.3127 15.685 14.0945 15.7284C13.8762 15.7718 13.65 15.7495 13.4445 15.6644C13.2389 15.5792 13.0632 15.435 12.9396 15.25C12.816 15.065 12.75 14.8475 12.75 14.625C12.75 14.3266 12.8685 14.0405 13.0795 13.8295C13.2905 13.6185 13.5766 13.5 13.875 13.5ZM13.875 17.25C14.0975 17.25 14.315 17.316 14.5 17.4396C14.685 17.5632 14.8292 17.7389 14.9144 17.9445C14.9995 18.15 15.0218 18.3762 14.9784 18.5945C14.935 18.8127 14.8278 19.0132 14.6705 19.1705C14.5132 19.3278 14.3127 19.435 14.0945 19.4784C13.8762 19.5218 13.65 19.4995 13.4445 19.4144C13.2389 19.3292 13.0632 19.185 12.9396 19C12.816 18.815 12.75 18.5975 12.75 18.375C12.75 18.0766 12.8685 17.7905 13.0795 17.5795C13.2905 17.3685 13.5766 17.25 13.875 17.25ZM10.125 13.5C10.3475 13.5 10.565 13.566 10.75 13.6896C10.935 13.8132 11.0792 13.9889 11.1644 14.1945C11.2495 14.4 11.2718 14.6262 11.2284 14.8445C11.185 15.0627 11.0778 15.2632 10.9205 15.4205C10.7632 15.5778 10.5627 15.685 10.3445 15.7284C10.1262 15.7718 9.90005 15.7495 9.69448 15.6644C9.48891 15.5792 9.31321 15.435 9.1896 15.25C9.06598 15.065 9 14.8475 9 14.625C9 14.3266 9.11853 14.0405 9.3295 13.8295C9.54048 13.6185 9.82663 13.5 10.125 13.5ZM10.125 17.25C10.3475 17.25 10.565 17.316 10.75 17.4396C10.935 17.5632 11.0792 17.7389 11.1644 17.9445C11.2495 18.15 11.2718 18.3762 11.2284 18.5945C11.185 18.8127 11.0778 19.0132 10.9205 19.1705C10.7632 19.3278 10.5627 19.435 10.3445 19.4784C10.1262 19.5218 9.90005 19.4995 9.69448 19.4144C9.48891 19.3292 9.31321 19.185 9.1896 19C9.06598 18.815 9 18.5975 9 18.375C9 18.0766 9.11853 17.7905 9.3295 17.5795C9.54048 17.3685 9.82663 17.25 10.125 17.25ZM6.375 13.5C6.5975 13.5 6.81501 13.566 7.00002 13.6896C7.18502 13.8132 7.32922 13.9889 7.41436 14.1945C7.49951 14.4 7.52179 14.6262 7.47838 14.8445C7.43498 15.0627 7.32783 15.2632 7.1705 15.4205C7.01316 15.5778 6.81271 15.685 6.59448 15.7284C6.37625 15.7718 6.15005 15.7495 5.94448 15.6644C5.73891 15.5792 5.56321 15.435 5.4396 15.25C5.31598 15.065 5.25 14.8475 5.25 14.625C5.25 14.3266 5.36853 14.0405 5.5795 13.8295C5.79048 13.6185 6.07663 13.5 6.375 13.5ZM6.375 17.25C6.5975 17.25 6.81501 17.316 7.00002 17.4396C7.18502 17.5632 7.32922 17.7389 7.41436 17.9445C7.49951 18.15 7.52179 18.3762 7.47838 18.5945C7.43498 18.8127 7.32783 19.0132 7.1705 19.1705C7.01316 19.3278 6.81271 19.435 6.59448 19.4784C6.37625 19.5218 6.15005 19.4995 5.94448 19.4144C5.73891 19.3292 5.56321 19.185 5.4396 19C5.31598 18.815 5.25 18.5975 5.25 18.375C5.25 18.0766 5.36853 17.7905 5.5795 17.5795C5.79048 17.3685 6.07663 17.25 6.375 17.25Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="dixel-case-page-step-about-bar-item__info">
+                        <div class="dixel-case-page-step-about-bar-item__info-title">Completion time</div>
+                        <div class="dixel-case-page-step-about-bar-item__info-text">{{ module.info_bar.completion_time }}</div>
+                    </div>
+                </div>
+                <div class="dixel-case-page-step-about-bar-item">
+                    <div class="dixel-case-page-step-about-bar-item__circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <g clip-path="url(#clip0_876_1562)">
+                                <path d="M20.9999 8.61563V2.85C21.0008 2.57434 20.9472 2.30122 20.8422 2.04632C20.7373 1.79142 20.583 1.55976 20.3883 1.36464C20.1935 1.16952 19.9622 1.01478 19.7075 0.909306C19.4528 0.803829 19.1798 0.749691 18.9042 0.750001H13.1418C12.764 0.750779 12.4017 0.900514 12.1335 1.16672L0.613522 12.6834C0.220623 13.0776 0 13.6114 0 14.168C0 14.7245 0.220623 15.2583 0.613522 15.6525L6.0979 21.1369C6.49192 21.5299 7.0257 21.7506 7.58219 21.7506C8.13869 21.7506 8.67247 21.5299 9.06649 21.1369L20.5832 9.62391C20.8495 9.35582 20.9993 8.99349 20.9999 8.61563ZM16.4999 6.75C16.2033 6.75 15.9132 6.66203 15.6666 6.49721C15.4199 6.33238 15.2276 6.09812 15.1141 5.82403C15.0006 5.54994 14.9709 5.24834 15.0288 4.95737C15.0866 4.66639 15.2295 4.39912 15.4393 4.18934C15.649 3.97956 15.9163 3.8367 16.2073 3.77882C16.4983 3.72095 16.7999 3.75065 17.074 3.86418C17.348 3.97771 17.5823 4.16997 17.7471 4.41665C17.912 4.66332 17.9999 4.95333 17.9999 5.25C17.9999 5.64783 17.8419 6.02936 17.5606 6.31066C17.2793 6.59197 16.8978 6.75 16.4999 6.75Z" fill="white"/>
+                                <path d="M23.2504 3C23.0515 3 22.8607 3.07902 22.7201 3.21967C22.5794 3.36032 22.5004 3.55109 22.5004 3.75V9.72047L10.2515 21.9698C10.1789 22.0388 10.1209 22.1216 10.0808 22.2133C10.0407 22.305 10.0194 22.4039 10.0181 22.504C10.0168 22.6041 10.0356 22.7034 10.0733 22.7961C10.1111 22.8889 10.1669 22.9731 10.2377 23.0439C10.3085 23.1147 10.3928 23.1706 10.4855 23.2083C10.5782 23.246 10.6776 23.2648 10.7777 23.2635C10.8778 23.2622 10.9766 23.2409 11.0683 23.2008C11.1601 23.1608 11.2428 23.1027 11.3118 23.0302L23.5931 10.7489C23.7237 10.6177 23.827 10.4618 23.8969 10.2903C23.9668 10.1188 24.002 9.93518 24.0004 9.75V3.75C24.0004 3.55109 23.9214 3.36032 23.7807 3.21967C23.6401 3.07902 23.4493 3 23.2504 3Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_876_1562">
+                                    <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="dixel-case-page-step-about-bar-item__info">
+                        <div class="dixel-case-page-step-about-bar-item__info-title">Price</div>
+                        <div class="dixel-case-page-step-about-bar-item__info-text">{{ module.info_bar.price }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

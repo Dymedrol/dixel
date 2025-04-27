@@ -3089,7 +3089,8 @@ body {
 .dixel-case-page-step-about-info__item-header {
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    cursor: pointer;
 }
 
 .dixel-case-page-step-about-info__item-header svg {
@@ -3107,7 +3108,7 @@ body {
     opacity: .7
 }
 
-.dixel-case-page-step-about-info__item.open svg {
+.dixel-case-page-step-about-info__item-header.accordion-active svg {
     transform: rotate(180deg)
 }
 
@@ -3158,13 +3159,15 @@ body {
 .dixel-case-page-step-about-compare__before {
     flex-shrink: 1;
     width: 50%;
-    object-fit: cover
+    object-fit: cover;
+    height: 100%;
 }
 
 .dixel-case-page-step-about-compare__after {
     flex-shrink: 1;
     width: 50%;
-    object-fit: cover
+    object-fit: cover;
+    height: 100%;
 }
 
 .dixel-case-page-step-about-bar {
