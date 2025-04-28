@@ -11,6 +11,20 @@
   "display_width" : null,
   "default" : "Brands we work with"
 }, {
+  "id" : "3ce92180-c9ec-611c-3d75-ee996ea76790",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
   "id" : "ed29044b-be44-0751-e7f9-b10f5a3d532b",
   "name" : "image_field",
   "label" : "Image",
@@ -20,7 +34,7 @@
     "min" : 1,
     "max" : 7,
     "sorting_label_field" : null,
-    "default" : null
+    "default" : 1
   },
   "responsive" : true,
   "resizable" : false,

@@ -15,26 +15,29 @@ $(document).ready(function() {
 
 
     // our services slider
-    var ourServicesSwiper = new Swiper(".dixel-our-services-swiper", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".dixel-our-services-next",
-            prevEl: ".dixel-our-services-prev",
-        },
-        on: {
-            resize: function enableOnlyMobile(swiper){
-                // Disable the slider when the window width is less than or equal to 960
-                if(720 < window.innerWidth){
-                    ourServicesSwiper.disable()
-                    ourServicesSwiper.el.classList.add('-non-slider')
-                }else{
-                    ourServicesSwiper.enable()
-                    ourServicesSwiper.el.classList.remove('-non-slider')
-                }
+
+    if (window.innerWidth < 720 ){
+        var ourServicesSwiper = new Swiper(".dixel-our-services-swiper", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".dixel-our-services-next",
+                prevEl: ".dixel-our-services-prev",
             },
-        }
-    });
+            on: {
+                resize: function enableOnlyMobile(swiper){
+                    // Disable the slider when the window width is less than or equal to 960
+                    if(720 < window.innerWidth){
+                        ourServicesSwiper.disable()
+                        ourServicesSwiper.el.classList.add('-non-slider')
+                    }else{
+                        ourServicesSwiper.enable()
+                        ourServicesSwiper.el.classList.remove('-non-slider')
+                    }
+                },
+            }
+        });
+    }
 
     // brands slider
     $('.dixel-brands-logos').slick({
@@ -88,26 +91,28 @@ $(document).ready(function() {
     });
 
     // dixel Our advantages slider
-    var advantagesSwiper = new Swiper(".dixel-advantages-swiper", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".dixel-advantages-next",
-            prevEl: ".dixel-advantages-prev",
-        },
-        on: {
-            resize: function enableOnlyMobile(swiper){
-                // Disable the slider when the window width is less than or equal to 960
-                if(1280 < window.innerWidth){
-                    advantagesSwiper.disable()
-                    advantagesSwiper.el.classList.add('-non-slider')
-                }else{
-                    advantagesSwiper.enable()
-                    advantagesSwiper.el.classList.remove('-non-slider')
-                }
+    if (window.innerWidth < 1280 ){
+        var advantagesSwiper = new Swiper(".dixel-advantages-swiper", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".dixel-advantages-next",
+                prevEl: ".dixel-advantages-prev",
             },
-        }
-    });
+            on: {
+                resize: function enableOnlyMobile(swiper){
+                    // Disable the slider when the window width is less than or equal to 960
+                    if(1280 < window.innerWidth){
+                        advantagesSwiper.disable()
+                        advantagesSwiper.el.classList.add('-non-slider')
+                    }else{
+                        advantagesSwiper.enable()
+                        advantagesSwiper.el.classList.remove('-non-slider')
+                    }
+                },
+            }
+        });
+    }
 
     // Dixel client says slider
     var clientSaySwiper = new Swiper(".dixel-client-say-swiper", {
@@ -120,26 +125,28 @@ $(document).ready(function() {
     });
 
     // dixel blog module slider
-    var blogModuleSwiper = new Swiper(".dixel-blog-swiper", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".dixel-blog-next",
-            prevEl: ".dixel-blog-prev",
-        },
-        on: {
-            resize: function enableOnlyMobile(swiper){
-                // Disable the slider when the window width is less than or equal to 960
-                if(1280 < window.innerWidth){
-                    blogModuleSwiper.disable()
-                    blogModuleSwiper.el.classList.add('-non-slider')
-                }else{
-                    blogModuleSwiper.enable()
-                    blogModuleSwiper.el.classList.remove('-non-slider')
-                }
+    if (window.innerWidth < 1280 ){
+        var blogModuleSwiper = new Swiper(".dixel-blog-swiper", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".dixel-blog-next",
+                prevEl: ".dixel-blog-prev",
             },
-        }
-    });
+            on: {
+                resize: function enableOnlyMobile(swiper){
+                    // Disable the slider when the window width is less than or equal to 960
+                    if(1280 < window.innerWidth){
+                        blogModuleSwiper.disable()
+                        blogModuleSwiper.el.classList.add('-non-slider')
+                    }else{
+                        blogModuleSwiper.enable()
+                        blogModuleSwiper.el.classList.remove('-non-slider')
+                    }
+                },
+            }
+        });
+    }
 
     // our cases page
     $('.dixel-our-cases-tab-menu__item').click(function () {

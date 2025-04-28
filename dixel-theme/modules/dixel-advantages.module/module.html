@@ -1,6 +1,12 @@
 <section class="dixel-advantages">
     <div class="container">
-    <h2 class="mobile-headline-h2 headline-h3 dixel-advantages__title">{% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}</h2>
+    {% if module.title_html_tag == 'h1' %}
+        <h1 class="mobile-headline-h2 headline-h3 dixel-advantages__title">{{ module.richtext_field }}</h1>
+    {% elif module.title_html_tag == 'h2' %}
+        <h2 class="mobile-headline-h2 headline-h3 dixel-advantages__title">{{ module.richtext_field }}</h2>
+    {% elif module.title_html_tag == 'h3' %}
+        <h3 class="mobile-headline-h2 headline-h3 dixel-advantages__title">{{ module.richtext_field }}</h3>
+    {% endif %}
     </div>
 
     <div class="swiper dixel-advantages-swiper">

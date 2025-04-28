@@ -8,6 +8,20 @@
   "display_width" : null,
   "default" : "Team <strong>􀻸</strong>"
 }, {
+  "id" : "37d15ce5-b117-f321-9bb8-db99a6e1858d",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
   "id" : "4820ab5e-885e-6a9e-5be8-1df388e33f73",
   "name" : "card",
   "label" : "Card",

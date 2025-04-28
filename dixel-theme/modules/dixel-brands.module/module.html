@@ -1,7 +1,13 @@
     <section class="dixel-brands">
       <div class="dixel-brands-wrapper">
         <div class="dixel-brands-circle">
-          <div class="mobile-headline-h2 headline-h3 dixel-brands__title">{{ module.title }}</div>
+          {% if module.title_html_tag == 'h1' %}
+              <h1 class="mobile-headline-h2 headline-h3 dixel-brands__title">{{ module.title }}</h1>
+          {% elif module.title_html_tag == 'h2' %}
+              <h2 class="mobile-headline-h2 headline-h3 dixel-brands__title">{{ module.title }}</h2>
+          {% elif module.title_html_tag == 'h3' %}
+              <h3 class="mobile-headline-h2 headline-h3 dixel-brands__title">{{ module.title }}</h3>
+          {% endif %}
           <div class="dixel-brands-container">
             <div class="swiper-container dixel-brands-swiper">
               <div class="dixel-brands-logos swiper-wrapper">

@@ -1,7 +1,13 @@
     <section class="dixel-our-services-slider">
         <div class="dixel-our-services-slider__container">
             <div class="dixel-our-services-slider__header">
-                <h2 class="mobile-headline-h2 headline-h2 dixel-our-services-slider-title">{{ module.title }}</h2>
+                {% if module.title_html_tag == 'h1' %}
+                    <h1 class="mobile-headline-h2 headline-h2 dixel-our-services-slider-title">{{ module.title }}</h1>
+                {% elif module.title_html_tag == 'h2' %}
+                    <h2 class="mobile-headline-h2 headline-h2 dixel-our-services-slider-title">{{ module.title }}</h2>
+                {% elif module.title_html_tag == 'h3' %}
+                    <h3 class="mobile-headline-h2 headline-h2 dixel-our-services-slider-title">{{ module.title }}</h3>
+                {% endif %}
                 <div class="dixel-our-services-slider-buttons">
                     <div class="dixel-our-services-slider-button dixel-our-services-slider-button-prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

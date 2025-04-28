@@ -8,6 +8,20 @@
   "display_width" : null,
   "default" : "Our Cases <strong>􁘲</strong>"
 }, {
+  "id" : "0ee06c4e-8420-a427-4279-69ea9c15e95d",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
   "id" : "cd85276b-51d9-a4f0-bec2-9afccd7f9baf",
   "name" : "category",
   "label" : "Category",

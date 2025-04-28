@@ -8,6 +8,20 @@
   "display_width" : null,
   "default" : "Case title <strong>􁘲</strong>"
 }, {
+  "id" : "a756532e-ca05-9329-04b1-0b95b26acf3b",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h1"
+}, {
   "id" : "04e09a4a-6d62-4f6c-4b7b-258bbb8484cf",
   "name" : "tag",
   "label" : "tag",

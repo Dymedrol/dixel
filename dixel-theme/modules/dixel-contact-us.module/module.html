@@ -17,7 +17,13 @@
                         </svg>
                     </div>
                     <div class="dixel-contact-us__title-wrapper">
-                        <h2 class="mobile-headline-h2 headline-h3 dixel-contact-us__title">{{ module.title }}</h2>
+                        {% if module.title_html_tag == 'h1' %}
+                            <h1 class="mobile-headline-h2 headline-h3 dixel-contact-us__title">{{ module.title }}</h1>
+                        {% elif module.title_html_tag == 'h2' %}
+                            <h2 class="mobile-headline-h2 headline-h3 dixel-contact-us__title">{{ module.title }}</h2>
+                        {% elif module.title_html_tag == 'h3' %}
+                            <h3 class="mobile-headline-h2 headline-h3 dixel-contact-us__title">{{ module.title }}</h3>
+                        {% endif %}
                     </div>
                     <div class="mobile-body-2 body-2 dixel-contact-us__text">{{ module.text_field }}</div>
                 </div>

@@ -31,7 +31,8 @@
   "reordering_enabled" : true,
   "preset" : null,
   "type" : "choice",
-  "display_width" : null
+  "display_width" : null,
+  "default" : "h1"
 }, {
   "id" : "9cc85988-7552-38f8-0f9a-65c34f1e2f76",
   "name" : "title",

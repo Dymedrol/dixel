@@ -2,7 +2,13 @@
         <div class="container">
             <div class="dixel-contacts__wrapper">
                 <div class="dixel-contacts-info">
-                    <h2 class="mobile-headline-h2 headline-h2 dixel-contacts__title">{{ module.title }}</h2>
+                    {% if module.title_html_tag == 'h1' %}
+                        <h1 class="mobile-headline-h2 headline-h2 dixel-contacts__title">{{ module.title }}</h1>
+                    {% elif module.title_html_tag == 'h2' %}
+                        <h2 class="mobile-headline-h2 headline-h2 dixel-contacts__title">{{ module.title }}</h2>
+                    {% elif module.title_html_tag == 'h3' %}
+                        <h3 class="mobile-headline-h2 headline-h2 dixel-contacts__title">{{ module.title }}</h3>
+                    {% endif %}
                     <div class="dixel-contacts-info-block">
                         <div class="dixel-contacts-info-block-item">
                             <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">Just give us a call</div>

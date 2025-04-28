@@ -8,6 +8,20 @@
   "display_width" : null,
   "default" : "Our services in the DMV area <strong>􁘲</strong>"
 }, {
+  "id" : "9deb4955-5a72-9bae-0642-d5178149510f",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h1"
+}, {
   "id" : "2f055761-5f1c-7da1-ec0c-3da3aac4ab66",
   "name" : "field_group",
   "label" : "Category",

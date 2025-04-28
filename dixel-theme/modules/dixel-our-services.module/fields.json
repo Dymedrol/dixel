@@ -8,6 +8,20 @@
   "display_width" : null,
   "default" : "Our Services in DMV area <strong>􁘮</strong>"
 }, {
+  "id" : "67e904d9-1e8c-2bfa-d0e2-3970f68df8ed",
+  "name" : "title_html_tag",
+  "label" : "title html tag",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "h1" ], [ "h2", "h2" ], [ "h3", "h3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
   "id" : "ee2cd3b8-5357-03ce-1429-834a9c36cf4d",
   "name" : "card",
   "label" : "Card",

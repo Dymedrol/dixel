@@ -1,6 +1,6 @@
 {
   "global" : false,
-  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "content_types" : [ "KNOWLEDGE_BASE", "QUOTE_TEMPLATE", "LANDING_PAGE", "CASE_STUDY", "SITE_PAGE", "CUSTOMER_PORTAL", "BLOG_LISTING", "WEB_INTERACTIVE", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 189285939511,
   "label" : "dixel contact us",
