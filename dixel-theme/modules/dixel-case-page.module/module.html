@@ -61,6 +61,7 @@
         {% for item in module.step %}
           <div class="dixel-case-page-step" id="tab-{{ loop.index }}">
               <div class="dixel-case-page-step-content">
+                  {% set imagesCount = 0 %}
                   {% for item2 in item.card %}
                     {% if item2.card_type == "text" %}
                       <div class="dixel-case-page-step-content-item dixel-case-page-step-content-item_withtext">
@@ -78,7 +79,8 @@
                                     {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}"' %}
                                 {% endif %}
                                  {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
-                                <img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-step-content-item__pic">
+                                <img data-index="{{ imagesCount }}" src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-step-content-item__pic">
+                                {% set imagesCount = imagesCount + 1 %}
                             {% endif %}
                         </div>
                     {% endif %}
@@ -146,4 +148,75 @@
             </div>
         </div>
     </div>
+
+    {% for item in module.step %}
+        <div class="dixel-case-page-popup-shadow" id="popup-slider-{{ loop.index }}">
+            <div class="dixel-case-page-popup-inner">
+                <div class="dixel-case-page-popup-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="swiper dixel-case-page-popup-slider-1">
+                    <div class="swiper-wrapper">
+
+                        {% for item2 in item.card %}
+                            {% if item2.card_type == "image" %}
+                                <div class="swiper-slide">
+                                    {% if item2.image_field.src %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% if item2.image_field.size_type == 'auto' %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% elif item2.image_field.size_type == 'auto_custom_max' %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}"' %}
+                                    {% endif %}
+                                    {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+                                    <img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-popup-pic">
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="swiper dixel-case-page-popup-slider-2">
+                    <div class="dixel-case-page-popup-slider-2-menu">
+                        {% set count = 0 %}
+                        {% for item2 in item.card %}
+                            {% if item2.card_type == "image" %}
+                                <div class="">
+                                    {% if item2.image_field.src %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% if item2.image_field.size_type == 'auto' %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                                    {% elif item2.image_field.size_type == 'auto_custom_max' %}
+                                    {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}"' %}
+                                    {% endif %}
+                                    {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+                                    <img data-index="{{ count }}" src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-case-page-popup-thumb">
+                                    {% endif %}
+                                </div>
+                                {% set count = count + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="dixel-case-page-popup-nav">
+                    <div class="button-circle-secondary mobile-size-s size-m dixel-case-page-popup-slider-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Icons/Arrow">
+                                <path id="Vector 190" d="M10 16L6 12M6 12L10 8M6 12L18 12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="button-circle-secondary mobile-size-s size-m reverse dixel-case-page-popup-slider-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Icons/Arrow">
+                                <path id="Vector 190" d="M10 16L6 12M6 12L10 8M6 12L18 12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 </section>

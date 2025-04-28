@@ -169,7 +169,7 @@ $(document).ready(function() {
     });
 
     // our services slider swiper
-    var casesSwiper = new Swiper(".dixel-our-services-slider-swiper", {
+    var ourServicesSliderSwiper = new Swiper(".dixel-our-services-slider-swiper", {
         slidesPerView: "auto",
         spaceBetween: 20,
         navigation: {
@@ -204,6 +204,35 @@ $(document).ready(function() {
         $(this).addClass('dixel-case-page-tab-menu__item_active');
         module.find('.dixel-case-page-step').removeClass('open');
         module.find(`#tab-${tabIndex}`).addClass('open');
+    });
+
+    $('.dixel-case-page-step-content-item__pic').click(function () {
+        const id = $(this).closest('.dixel-case-page-step').attr('id').replace('tab-','');
+        const index = $(this).attr('data-index');
+        casePageSwiper1[id - 1].slideTo(index,0,false);
+        $(`#popup-slider-${id}`).css('display', 'flex');
+    });
+
+    $('.dixel-case-page-popup-close').click(function () {
+        $(this).closest('.dixel-case-page-popup-shadow').css('display','none');
+    });
+
+    $('.dixel-case-page-popup-thumb').click(function () {
+        const index = $(this).attr('data-index');
+        const sliderIndex = $(this).closest('.dixel-case-page-popup-shadow').attr('id').replace('popup-slider-', '');
+        casePageSwiper1[sliderIndex - 1].slideTo(index,500,false);
+    });
+
+    var casePageSwiper1 = new Swiper(".dixel-case-page-popup-slider-1", {
+        loop: false,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".dixel-case-page-popup-slider-next",
+            prevEl: ".dixel-case-page-popup-slider-prev",
+        },
+        thumbs: {
+            // swiper: casePageSwiper2,
+        },
     });
 
 });
