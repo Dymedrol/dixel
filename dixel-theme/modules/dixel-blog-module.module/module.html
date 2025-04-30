@@ -2,11 +2,11 @@
     <div class="container">
         <div class="dixel-blog-module-header">
           {% if module.title_html_tag == 'h1' %}
-              <h1 class="mobile-headline-h2 headline-h3 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h1>
+              <h1 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h1>
           {% elif module.title_html_tag == 'h2' %}
-              <h2 class="mobile-headline-h2 headline-h3 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h2>
+              <h2 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h2>
           {% elif module.title_html_tag == 'h3' %}
-              <h3 class="mobile-headline-h2 headline-h3 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h3>
+              <h3 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-blog-module__title">{% inline_rich_text field="title" value="{{ module.title }}" %}</h3>
           {% endif %}
           <a href="{{ module.button.button_url.href|escape_url }}" class="button-secondary size-s  dixel-blog-module__button">{{ module.button.button_text }}</a>
         </div>
@@ -14,29 +14,29 @@
     <div class="swiper dixel-blog-swiper">
         <div class="dixel-blog-module-cards swiper-wrapper">
             {% for item in module.card %}
-                <div class="dixel-blog-module-card swiper-slide">
-                <div class="dixel-blog-module-card-wrapper">
-                    <div class="dixel-blog-module-card-inner">
-                        {% if item.image_field.src %}
-                        {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-                        {% if item.image_field.size_type == 'auto' %}
-                        {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-                        {% elif item.image_field.size_type == 'auto_custom_max' %}
-                        {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-                        {% endif %}
-                        {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-                        <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-blog-module-card__pic">
-                        {% endif %}
-                        <div class="headline-h5 dixel-blog-module-card__title dixel-blog-module-card__title__descktop">{{ item.card_title }}</div>
-                    </div>
-                    <a href="{{ item.card_url.href|escape_url }}" class="button-circle-primery dixel-blog-module-card__button size-m">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="headline-h5 dixel-blog-module-card__title dixel-blog-module-card__title__mobile">{{ item.card_title }}</div>
-            </div>
+              <a  href="{{ item.card_url.href|escape_url }}" class="dixel-blog-module-card swiper-slide">
+                  <div class="dixel-blog-module-card-wrapper">
+                      <div class="dixel-blog-module-card-inner">
+                          {% if item.image_field.src %}
+                          {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                          {% if item.image_field.size_type == 'auto' %}
+                          {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% elif item.image_field.size_type == 'auto_custom_max' %}
+                          {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                          {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                          <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-blog-module-card__pic">
+                          {% endif %}
+                          <div class="headline-h5 dixel-blog-module-card__title dixel-blog-module-card__title__descktop">{{ item.card_title }}</div>
+                      </div>
+                      <div class="button-circle-primery dixel-blog-module-card__button size-m">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                              <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                  </div>
+                  <div class="headline-h5 dixel-blog-module-card__title dixel-blog-module-card__title__mobile">{{ item.card_title }}</div>
+              </a>
             {% endfor %}
         </div>
     </div>

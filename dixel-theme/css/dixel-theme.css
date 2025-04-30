@@ -221,6 +221,16 @@ a {
 }
 }
 
+@media((min-width: 720px) and (max-width: 1279px)) {
+.tablet-headline-h3 {
+    font-family: DOSS;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 90.909% */
+}
+}
+
 .body-1 {
     font-family: Inter;
     font-size: 24px;
@@ -1603,6 +1613,35 @@ body {
 }
 }
 
+.dixel-cases-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.dixel-cases-header .dixel-cases-title {
+    margin-bottom: 0;
+}
+
+@media((min-width: 1280px)) {
+.dixel-cases-header .dixel-cases-title {
+    max-width: 85%;
+}
+}
+
+@media((min-width: 720px)) {
+.dixel-cases-header {
+    margin-bottom: 31px;
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-cases-header {
+    margin-bottom: 40px;
+}
+}
+
 .dixel-cases-title {
     margin-bottom: 32px;
     color: #251b4c
@@ -1678,7 +1717,7 @@ body {
 
 @media((min-width: 720px)) {
 .dixel-cases-tab-menu__item:first-child {
-    margin-left: 40px
+    margin-left: calc((100vw - 660px) / 2)
 }
 }
 
@@ -1938,25 +1977,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
     margin-bottom: 24px
 }
 
 @media((min-width: 720px)) {
 .dixel-client-say-header {
-    gap: 36px
 }
 }
 
 @media((min-width: 1280px)) {
 .dixel-client-say-header {
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
 }
 }
 
 .dixel-client-say__title {
-    color: #251b4c
+    color: #251b4c;
+    margin-bottom: 24px;
+    text-align: center
+}
+
+@media((min-width: 720px)) {
+.dixel-client-say__title {
+    margin-bottom: 40px
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-client-say__title {
+    margin-bottom: 0
+}
 }
 
 .dixel-client-say__title strong {
@@ -2141,6 +2194,14 @@ body {
 }
 }
 
+.dixel-client-say-arrows .dixel-client-say-next.swiper-button-disabled {
+    display: none;
+}
+
+.dixel-client-say-arrows .dixel-client-say-prev.swiper-button-disabled {
+    display: none;
+}
+
 .dixel-client-say-socials {
     display: flex;
     gap: 12px;
@@ -2168,7 +2229,8 @@ body {
 }
 
 .dixel-client-say-socials__item img {
-    height: 20px
+    height: 20px;
+    width: auto;
 }
 
 .dixel-client-say-socials__item:hover {
@@ -2225,6 +2287,12 @@ body {
     display: flex;
     max-width: 1200px;
     margin: 0 auto
+}
+
+@media((min-width: 1280px)) {
+.dixel-blog-module-cards {
+    gap: 20px;
+}
 }
 
 .dixel-blog-module-card {
@@ -3438,7 +3506,7 @@ body {
 
 @media((min-width: 1280px)) {
 .dixel-case-page-popup-inner {
-    width: 1034px;
+    width: 80%;
 }
 }
 
@@ -3490,7 +3558,7 @@ body {
 
 @media((min-width: 1280px)) {
 .dixel-case-page-popup-slider-1 {
-    width: 890px;
+    width: 80%;
 }
 }
 
@@ -3824,7 +3892,13 @@ body {
 }
 
 .dixel-services-page-title {
-    color: #251b4c
+    color: #251B4C;
+}
+
+@media((min-width: 720px)) {
+.dixel-services-page-title {
+    text-align: center;
+}
 }
 
 .dixel-services-page-title strong {
@@ -4203,6 +4277,7 @@ body {
 .dixel-services-page-pic {
     display: block;
     height: 343px;
+    width: 100%;
     object-fit: cover;
     border-radius: 24px;
     overflow: hidden
@@ -5192,6 +5267,10 @@ body {
     margin-bottom: 20px
 }
 
+.dixel-about-info__item:first-child .dixel-about-info__item-details{
+    display: block;
+}
+
 .dixel-about-info__item:last-child {
     border-bottom: 0;
     margin-bottom: 0
@@ -5273,19 +5352,21 @@ body {
 }
 }
 
-.dixel-client-say {
-    overflow: hidden;
-}
-
-.dixel-client-say__title {
+.dixel-team__title {
     color: #251b4c;
     margin-bottom: 24px;
     text-align: center
 }
 
 @media((min-width: 720px)) {
-.dixel-client-say__title {
+.dixel-team__title__title {
     margin-bottom: 40px
+}
+}
+
+@media((min-width: 1280px)) {
+.dixel-team__title__title {
+    margin-bottom: 40px;
 }
 }
 

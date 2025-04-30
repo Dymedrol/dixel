@@ -22,6 +22,18 @@
   "display_width" : null,
   "default" : "h1"
 }, {
+  "id" : "d3759f51-32d5-7076-7f1d-bff79c569b1d",
+  "name" : "phone_title",
+  "label" : "Phone title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Just give us a call"
+}, {
   "id" : "cecc521d-ccc5-40a9-f86a-bcaae3601675",
   "name" : "phone",
   "label" : "Phone",
@@ -79,6 +91,18 @@
   "type" : "text",
   "display_width" : null,
   "default" : "12907 Crookston Lane, Rockville, Maryland, 20851"
+}, {
+  "id" : "417989b2-03df-0a8f-bd98-d7562fa00cee",
+  "name" : "email_title",
+  "label" : "email title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Or email us at"
 }, {
   "id" : "f027be09-8dad-025d-901e-4f0da0cba17a",
   "name" : "email",

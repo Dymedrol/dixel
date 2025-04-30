@@ -11,11 +11,11 @@
                     {% endif %}
                     <div class="dixel-contacts-info-block">
                         <div class="dixel-contacts-info-block-item">
-                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">Just give us a call</div>
+                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">{{ module.phone_title }}</div>
                             <a href="tel:{{ module.phone.url_field.href }}" class="mobile-headline-h3 headline-h4 dixel-contacts-info-block-item__link">{{ module.phone.phone_text }}</a>
                         </div>
                         <div class="dixel-contacts-info-block-item">
-                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">email</div>
+                            <div class="mobile-body-2 body-2 dixel-contacts-info-block-item__title">{{ module.email_title }}</div>
                             {% set href = module.email.url.href %}
                             <a href="mailto:{{ href }}" class="mobile-headline-h3 headline-h4 dixel-contacts-info-block-item__link">{{ href }}</a>
                         </div>

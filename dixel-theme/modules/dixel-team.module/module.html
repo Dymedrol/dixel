@@ -1,10 +1,10 @@
     <section class="dixel-team">
         {% if module.title_html_tag == 'h1' %}
-            <h1 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h1>
+            <h1 class="mobile-headline-h2 headline-h3 dixel-team__title">{{ module.title }}</h1>
         {% elif module.title_html_tag == 'h2' %}
-            <h2 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h2>
+            <h2 class="mobile-headline-h2 headline-h3 dixel-team__title">{{ module.title }}</h2>
         {% elif module.title_html_tag == 'h3' %}
-            <h3 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h3>
+            <h3 class="mobile-headline-h2 headline-h3 dixel-team__title">{{ module.title }}</h3>
         {% endif %}
         <div class="dixel-team-wrapper">
           {% for item in module.card %}

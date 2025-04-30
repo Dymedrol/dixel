@@ -146,6 +146,104 @@
       "href" : "",
       "type" : "EXTERNAL"
     }
+  }, {
+    "id" : "1d0a4cac-bd73-ab93-da7f-99d74cec5b01",
+    "name" : "social",
+    "label" : "Social",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "7de9a370-8ee3-5a66-05c2-ec146733cc77",
+      "name" : "social_title",
+      "label" : "Social title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "01d5d020-2d02-d2df-d987-3b74b8b5af3a",
+      "name" : "social_image",
+      "label" : "Social image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "social_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "a1d424f0-f328-5f62-7cc1-1c596ec28812",
+  "name" : "socials",
+  "label" : "Socials",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 0
+  },
+  "children" : [ {
+    "id" : "2243dd45-5030-f738-38c0-b2ac4d6c9e24",
+    "name" : "socials_image",
+    "label" : "Socials image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "ac081657-0508-d32d-f644-35f10dc9c324",
+    "name" : "socials_url",
+    "label" : "socials url",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

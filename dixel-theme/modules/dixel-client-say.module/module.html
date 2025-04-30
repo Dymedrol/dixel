@@ -2,11 +2,11 @@
       <div class="container">
         <div class="dixel-client-say-header">
           {% if module.title_html_tag == 'h1' %}
-              <h1 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h1>
+              <h1 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-client-say__title">{{ module.title }}</h1>
           {% elif module.title_html_tag == 'h2' %}
-              <h2 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h2>
+              <h2 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-client-say__title">{{ module.title }}</h2>
           {% elif module.title_html_tag == 'h3' %}
-              <h3 class="mobile-headline-h2 headline-h3 dixel-client-say__title">{{ module.title }}</h3>
+              <h3 class="mobile-headline-h2 tablet-headline-h3 headline-h2 dixel-client-say__title">{{ module.title }}</h3>
           {% endif %}
           <a href="{{ module.button.button_url.href|escape_url }}" class="button-primery mobile-size-s size-m">{{ module.button.button_text }}</a>
         </div>
@@ -74,8 +74,17 @@
               </div>
               <div class="mobile-body-2 body-3 dixel-client-say-card__text">{{ item.card_text }}</div>
               <div class="dixel-client-say-card__footer">
-                <img src="images/google-logo.svg" alt="" class="dixel-client-say-card__footer-logo">
-                <div class="body-3 dixel-client-say-card__footer-logo-text">Google</div>
+                {% if item.social.social_image.src %}
+                    {% set sizeAttrs = 'width="{{ item.social.social_image.width|escape_attr }}" height="{{ item.social.social_image.height|escape_attr }}"' %}
+                    {% if item.social.social_image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.social.social_image.width|escape_attr }}" height="{{ item.social.social_image.height|escape_attr }}"' %}
+                    {% elif item.social.social_image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.social.social_image.max_width|escape_attr }}" height="{{ item.social.social_image.max_height|escape_attr }}"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.social.social_image.loading != 'disabled' ? 'loading="{{ item.social.social_image.loading|escape_attr }}"' : '' %}
+                    <img src="{{ item.social.social_image.src|escape_url }}" alt="{{ item.social.social_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }} class="dixel-client-say-card__footer-logo">
+                {% endif %}
+                <div class="body-3 dixel-client-say-card__footer-logo-text">{{ item.social.social_title }}</div>
                 <a href="{{ item.card_url.href|escape_url }}" class="button-circle-secondary size-m dixel-client-say-card__footer-logo-button">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 16L18 12M18 12L14 8M18 12L6 12" stroke="#251B4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -105,17 +114,34 @@
         </div>
       </div>
       <div class="dixel-client-say-socials">
-        <div class="dixel-client-say-socials__item">
-          <img src="{{ module_asset_url("google-logo2.png") }}" alt="">
-        </div>
-        <div class="dixel-client-say-socials__item">
-          <img src="{{ module_asset_url("facebook-logo.png") }}" alt="">
-        </div>
-        <div class="dixel-client-say-socials__item">
-          <img src="{{ module_asset_url("yelp-logo.png") }}" alt="">
-        </div>
-        <div class="dixel-client-say-socials__item">
-          <img src="{{ module_asset_url("th-logo.png") }}" alt="">
-        </div>
+        {% for item in module.socials %}
+          {% if item.socials_url.href %}
+            {% if item.socials_image.src %}
+              {% set sizeAttrs = 'width="{{ item.socials_image.width|escape_attr }}" height="{{ item.socials_image.height|escape_attr }}"' %}
+              {% if item.socials_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.socials_image.width|escape_attr }}" height="{{ item.socials_image.height|escape_attr }}"' %}
+              {% elif item.socials_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.socials_image.max_width|escape_attr }}" height="{{ item.socials_image.max_height|escape_attr }}"' %}
+              {% endif %}
+              {% set loadingAttr = item.socials_image.loading != 'disabled' ? 'loading="{{ item.socials_image.loading|escape_attr }}"' : '' %}
+              <a href="{{ item.socials_url.href|escape_url }}" class="dixel-client-say-socials__item">
+                <img src="{{ item.socials_image.src|escape_url }}" alt="{{ item.socials_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              </a>
+            {% endif %}
+          {% else %}
+            {% if item.socials_image.src %}
+              {% set sizeAttrs = 'width="{{ item.socials_image.width|escape_attr }}" height="{{ item.socials_image.height|escape_attr }}"' %}
+              {% if item.socials_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.socials_image.width|escape_attr }}" height="{{ item.socials_image.height|escape_attr }}"' %}
+              {% elif item.socials_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.socials_image.max_width|escape_attr }}" height="{{ item.socials_image.max_height|escape_attr }}"' %}
+              {% endif %}
+              {% set loadingAttr = item.socials_image.loading != 'disabled' ? 'loading="{{ item.socials_image.loading|escape_attr }}"' : '' %}
+              <div class="dixel-client-say-socials__item">
+                <img src="{{ item.socials_image.src|escape_url }}" alt="{{ item.socials_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
       </div>
     </section>
